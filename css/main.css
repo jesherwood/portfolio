@@ -12,9 +12,9 @@
    ========================================================================== */
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 /*
@@ -28,13 +28,13 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 /*
@@ -42,12 +42,12 @@ html {
  */
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 /*
@@ -62,7 +62,7 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 /*
@@ -70,9 +70,9 @@ video {
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -80,7 +80,7 @@ fieldset {
  */
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 /* ==========================================================================
@@ -97,7 +97,7 @@ textarea {
 
 .hidden,
 [hidden] {
-  display: none !important;
+    display: none !important;
 }
 
 /*
@@ -110,17 +110,17 @@ textarea {
  */
 
 .sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
+  }
 
 /*
  * Extends the .sr-only class to allow the element
@@ -130,13 +130,13 @@ textarea {
 
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
 }
 
 /*
@@ -144,7 +144,7 @@ textarea {
  */
 
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 /*
@@ -161,12 +161,12 @@ textarea {
 
 .clearfix::before,
 .clearfix::after {
-  content: " ";
-  display: table;
-}
+    content: " ";
+    display: table;
+  }
 
 .clearfix::after {
-  clear: both;
+    clear: both;
 }
 
 /* ==========================================================================
@@ -180,9 +180,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -196,24 +196,24 @@ textarea {
   *,
   *::before,
   *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+      background: #fff !important;
+      color: #000 !important;
+      /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
   }
 
   a,
   a:visited {
-    text-decoration: underline;
+      text-decoration: underline;
   }
 
   a[href]::after {
-    content: " (" attr(href) ")";
+      content: " (" attr(href) ")";
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+      content: " (" attr(title) ")";
   }
 
   /*
@@ -222,17 +222,17 @@ textarea {
    */
   a[href^="#"]::after,
   a[href^="javascript:"]::after {
-    content: "";
+      content: "";
   }
 
   pre {
-    white-space: pre-wrap !important;
+      white-space: pre-wrap !important;
   }
 
   pre,
   blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
+      border: 1px solid #999;
+      page-break-inside: avoid;
   }
 
   /*
@@ -240,24 +240,214 @@ textarea {
    * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
    */
   thead {
-    display: table-header-group;
+      display: table-header-group;
   }
 
   tr,
   img {
-    page-break-inside: avoid;
+      page-break-inside: avoid;
   }
 
   p,
   h2,
   h3 {
-    orphans: 3;
-    widows: 3;
+      orphans: 3;
+      widows: 3;
   }
 
   h2,
   h3 {
-    page-break-after: avoid;
+      page-break-after: avoid;
   }
 }
 
+/*
+* --------------------------Portfolio Styling---------------------------------
+*/
+
+/* || Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+/*
+* ---------Light Styles---------
+*/
+
+/* General Styles */
+
+:root {
+  /* colors */
+    --black: #000000;
+    --white: #FFFFFF;
+    --deep-space-sparkle: #335C67;
+    --medium-champagne: #FFF3B0;
+    --indian-yellow: #E09F3E;
+    --auburn: #9E2A2B;
+    --rosewood: #540B0E;
+}
+
+body {
+    margin: auto;
+    color: var(--deep-space-sparkle);
+    background-color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 18rem;
+    font-family: 'Roboto Slab', serif;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+/* || Header and Main Navigation */
+
+nav {
+    width: 98%;
+    z-index: 1;
+    padding-top: 2rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+nav li {
+    display: inline;
+    float: left;
+    padding: 1rem;
+    border: 3px solid var(--deep-space-sparkle);
+    border-radius: 4px;
+    margin: 2rem;
+    margin-top: 0;
+    -moz-transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
+}
+
+nav li:hover {
+    margin: 0.5rem;
+    margin-top: 0;
+    padding: 3rem;
+    cursor: pointer;
+}
+
+nav li a {
+    display: block;
+    color: var(--deep-space-sparkle);
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 0;
+}
+
+nav ul li .active {
+    color: red;
+}
+
+.day-toggle {
+    display: inline-flex;
+    float: right;
+    content: 'Show Me';
+    color: var(--white);
+    background-color: var(--deep-space-sparkle);
+}
+
+/* Header Text */
+
+hgroup {
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    font-stretch: expanded;
+}
+
+hgroup h1 {
+    line-height: 0;
+    margin-top: 6.3rem;
+    margin-bottom: 8.3rem;
+    letter-spacing: -1.57rem;
+    font-stretch: expanded;
+    white-space: nowrap;
+    opacity: 0.5;
+}
+
+/* || Hello and CV area */
+.block-container-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%;
+}
+
+.half-width-block {
+    background-color: var(--white);
+    border: 3px solid var(--deep-space-sparkle);
+    position: relative;
+    flex-basis: calc(25% - 10px);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.half-width-block::before {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    background-color: #1E1E1E;
+}
+
+.half-width-block p, h2, li {
+
+}
+
+
+/* || Projects */
+.one-third-grid {
+    background-color: var(--white);
+    border: 3px solid var(--deep-space-sparkle);
+}
+
+
+/* || Footer */
