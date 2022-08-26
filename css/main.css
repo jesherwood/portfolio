@@ -304,7 +304,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 h1 {
-    font-size: 18rem;
+    font-size: 4rem;
     font-family: 'Roboto Slab', serif;
 }
 
@@ -331,67 +331,86 @@ p {
 /* || Header and Main Navigation */
 
 nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--white);
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.navitem {
     width: 98%;
-    z-index: 1;
-    padding-top: 2rem;
 }
 
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--white);
+.navitem p {
+    line-height: 1;
 }
 
-nav li {
+.navitem h1 {
+    display: none;
+}
+
+.navitem.expand {
+    z-index: -1;
+}
+
+.navitem.expand p {
+    display: none;
+}
+
+.navitem.expand h1 {
     display: inline;
-    float: left;
-    padding: 1rem;
-    border: 3px solid var(--deep-space-sparkle);
-    border-radius: 4px;
-    margin: 2rem;
-    margin-top: 0;
-    -moz-transition: all .7s ease-in-out;
-    -webkit-transition: all .7s ease-in-out;
-    -ms-transition: all .7s ease-in-out;
-    -o-transition: all .7s ease-in-out;
-    transition: all .7s ease-in-out;
 }
 
-nav li:hover {
-    margin: 0.5rem;
-    margin-top: 0;
-    padding: 3rem;
+.auburn {
+    position: fixed;
+    top: 84%;
+    height: 16%;
+    background-color: var(--auburn);
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
 }
 
-nav li a {
-    display: block;
-    color: var(--deep-space-sparkle);
-    text-align: center;
-    padding: 14px 16px;
-    font-weight: 400;
-    font-size: 1.25rem;
-    text-decoration: none;
-    padding: 0;
+.deep-space-sparkle {
+    position: fixed;
+    top: 89%;
+    height: 11%;
+    background-color: var(--deep-space-sparkle);
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
 }
 
-nav ul li .active {
-    color: red;
+.indian-yellow {
+    position: fixed;
+    top: 94%;
+    height: 6%;
+    background-color: var(--indian-yellow);
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.expand {
+    top: 0;
+    height: 100%;
+    border-radius: 0;
 }
 
 .day-toggle {
-    display: inline-flex;
-    float: right;
-    content: 'Show Me';
-    color: var(--white);
+    position: absolute;
+    top: 2.3rem;
+    right: 2%;
+    padding: .5rem;
+    border-radius: 100%;
     background-color: var(--deep-space-sparkle);
+}
+
+.day-toggle:hover {
+    cursor: pointer;
 }
 
 /* Header Text */
@@ -399,7 +418,7 @@ nav ul li .active {
 hgroup {
     width: 100%;
     z-index: -1;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-stretch: expanded;
 }
 
@@ -407,7 +426,115 @@ hgroup h1 {
     line-height: 0;
     margin-top: 6.3rem;
     margin-bottom: 8.3rem;
-    letter-spacing: -1.57rem;
+    font-size: 10rem;
+    /* letter-spacing: -1.57rem; */
+    font-stretch: expanded;
+    white-space: nowrap;
+    opacity: 0.5;
+}
+
+/* || Hello and CV area */
+.block-container-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%;
+}
+
+.half-width-block {
+    background-color: var(--white);
+    border: 3px solid var(--deep-space-sparkle);
+    position: relative;
+    flex-basis: calc(25% - 10px);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.half-width-block::before {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+    background-color: #1E1E1E;
+}
+
+.half-width-block p, h2, li {
+
+}
+
+
+/* || Projects */
+.one-third-grid {
+    background-color: var(--white);
+    border: 3px solid var(--deep-space-sparkle);
+}
+
+
+/* || Footer */
+
+
+/*
+* ---------Dark Styles---------
+*/
+
+/* General Styles */
+
+body.dark {
+    color: var(--deep-space-sparkle);
+    background-color: var(--black);
+}
+
+/* || Header and Main Navigation */
+
+.dark .navitem {
+    width: 97.5%;
+}
+
+.dark .auburn {
+    background-color: var(--black);
+    border: 3px var(--auburn) solid;
+    color: var(--auburn);
+}
+
+.dark .deep-space-sparkle {
+    background-color: var(--black);
+    border: 3px var(--deep-space-sparkle) solid;
+    color: var(--deep-space-sparkle);
+}
+
+.dark .indian-yellow {
+    background-color: var(--black);
+    border: 3px var(--indian-yellow) solid;
+    color: var(--indian-yellow);
+}
+
+.dark .expand {
+    top: 0;
+    height: 100%;
+    width: 97.1%;
+    border: 6px solid;
+    border-radius: 0;
+}
+
+.dark .day-toggle {
+    background-color: var(--white);
+}
+
+/* Header Text */
+
+hgroup {
+    width: 100%;
+    z-index: -1;
+    /* overflow: hidden; */
+    font-stretch: expanded;
+}
+
+hgroup h1 {
+    line-height: 0;
+    margin-top: 6.3rem;
+    margin-bottom: 8.3rem;
+    font-size: 10rem;
+    /* letter-spacing: -1.57rem; */
     font-stretch: expanded;
     white-space: nowrap;
     opacity: 0.5;

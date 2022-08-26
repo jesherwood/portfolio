@@ -23,20 +23,15 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-        <ul>
-            <li><a href="#">CV</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="day-toggle">Show me</div>
-    </nav>
-    <hgroup>
-        <!-- <h1>Jesse Sherwood</h1> -->
-    </hgroup>
-</header>
-    <div class="wrapper">
+    <header>
+        <div class="day-toggle" onclick="toggleMode()">
+            <img src="img/sun_logo.svg" alt="sun logo" width="42" height="42">
+        </div>
+        <!-- <hgroup>
+            <h1>Jesse Sherwood</h1>
+        </hgroup> -->
+    </header>
+    <!-- <div class="wrapper">
         <section class="block-container-two">
             <article class="half-width-block">
                 <header>
@@ -98,10 +93,27 @@
                 </section>
             </article>
         </section>
+        -->
         <footer>
-            <div>social media</div>
-            <div>copyright</div>
-            <div>writing website</div>
+            <nav>
+                <div class="navitem auburn">
+                    <p>CV</p>
+                    <h1>CV</h1>
+                </div>
+                <div class="navitem deep-space-sparkle">
+                    <p>Projects</p>
+                    <h1>Projects</h1>
+                </div>
+                <div class="navitem indian-yellow">
+                    <p>Contact</p>
+                    <h1>Contact</h1>
+                </div>
+                <div class="navitem">
+                    <div>social media</div>
+                    <div>copyright</div>
+                    <div>writing website</div>
+                </div>
+            </nav>
         </footer>
     </div>
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
