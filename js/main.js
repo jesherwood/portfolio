@@ -17,9 +17,8 @@ for (let i = 0; i < navItems.length; i++) {
 
 
 // Ligh/dark theme switch function
-const mainBody = document.getElementsByTagName('body');
-const bodyMain = mainBody[0];
+const mainBody = document.getElementsByTagName('body')[0];
 
 function toggleMode() {
-    bodyMain.classList.toggle('dark');
+    mainBody.classList.toggle('dark');
 }
