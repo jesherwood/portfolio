@@ -324,7 +324,10 @@ p {
 /* || Header and Main Content */
 
 main {
-    margin: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .day-toggle {
@@ -400,7 +403,7 @@ nav {
 }
 
 .navitem.expand {
-    height: 100vh;
+    height: 50vh;
     z-index: -1;
     transition: top ease-out .5s;
 }
@@ -542,8 +545,22 @@ nav {
 }
 
 body.dark {
-    color: var(--deep-space-sparkle);
+    color: var(--indian-yellow);
     background-color: var(--black);
+}
+
+/* || Header and Main Content */
+
+.dark .day-toggle {
+    background-color: var(--rosewood);
+}
+
+.dark .day-toggle .dark-mode {
+    display: block;
+}
+
+.dark .day-toggle .light-mode {
+    display: none;
 }
 
 /* || Footer and Navigation */
@@ -606,7 +623,7 @@ body.dark {
 }
 
 .dark .footer-nav a:hover {
-    color: var(--auburn);
+    color: rgb(51,92,103, 0.9);
 }
 
 .dark .negative {
@@ -630,18 +647,6 @@ body.dark {
     width: 97.4%;
     border: 6px solid;
     border-radius: 0;
-}
-
-.dark .day-toggle {
-    background-color: var(--rosewood);
-}
-
-.dark .day-toggle .dark-mode {
-    display: block;
-}
-
-.dark .day-toggle .light-mode {
-    display: none;
 }
 
 /* || Hello and CV area */
