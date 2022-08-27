@@ -334,22 +334,35 @@ nav {
     width: 100%;
     position: fixed;
     bottom: 0;
+    overflow: hidden;
     color: var(--white);
     text-align: center;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
+    background: linear-gradient(
+        var(--white) 20%, 
+        var(--auburn) 20% 40%, 
+        var(--deep-space-sparkle) 40% 60%, 
+        var(--white) 60% 80%);
 }
 
 .navitem {
-    width: 97.7%;
+    max-width: 100%;
+    width: 100%;
     position: relative;
     padding: 1rem;
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
+    line-height: 1;
+    font-size: 120%;
+    transition: padding-bottom 0.3s ease;
+    transition: font-size 0.3s ease;
 }
 
-.navitem p {
-    line-height: 1;
+.navitem:hover {
+    padding-bottom: 2rem;
+    font-size: 150%;
 }
 
 .navitem h1 {
@@ -374,7 +387,7 @@ nav {
     transition: top ease-out .5s;
 }
 
-.navitem.expand p {
+.navitem.expand span {
     display: none;
 }
 
@@ -406,9 +419,31 @@ nav {
     background-color: var(--indian-yellow);
 }
 
+.white {
+    background-color: var(--white);
+}
+
+.navitem.white {
+    display: inline-flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 90%;
+}
+
+.navitem.white:hover {
+    padding-bottom: 1rem;
+    cursor: default;
+}
+
 .footer-nav {
-    display: inline;
     color: var(--black);
+}
+
+.footer-nav:hover {
+    color: var(--deep-space-sparkle);
+    cursor: pointer;
 }
 
 .expand {
@@ -425,10 +460,16 @@ nav {
     border-radius: 100%;
     background-color: var(--deep-space-sparkle);
     z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .day-toggle:hover {
     cursor: pointer;
+    transform: scale(1.2);
+}
+
+.day-toggle .dark-mode {
+    display: none;
 }
 
 /* Header Text */
@@ -491,6 +532,9 @@ hgroup h1 {
 */
 
 /* General Styles */
+.dark {
+    transition: display .5s ease;
+}
 
 body.dark {
     color: var(--deep-space-sparkle);
@@ -499,9 +543,21 @@ body.dark {
 
 /* || Header and Main Navigation */
 
+.dark nav {
+    background: linear-gradient(
+        var(--black) 20%, 
+        var(--auburn) 20% 40%, 
+        var(--deep-space-sparkle) 40% 60%, 
+        var(--black) 60% 80%);
+}
+
 .dark .navitem {
-    width: 97.9%;
-    padding: 13px;
+    padding: 14px;
+}
+
+.dark .navitem:hover {
+    padding-top: 1rem;
+    padding-bottom: 1.625rem;
 }
 
 .dark .auburn {
@@ -522,6 +578,22 @@ body.dark {
     color: var(--indian-yellow);
 }
 
+.dark .white {
+    background-color: var(--black);
+}
+
+.dark .white:hover {
+    padding-bottom: 14px;
+}
+
+.dark .footer-nav {
+    color: var(--white);
+}
+
+.dark .footer-nav:hover {
+    color: var(--auburn);
+}
+
 .dark .expand {
     top: 0;
     height: 100%;
@@ -532,6 +604,14 @@ body.dark {
 
 .dark .day-toggle {
     background-color: var(--white);
+}
+
+.dark .day-toggle .dark-mode {
+    display: block;
+}
+
+.dark .day-toggle .light-mode {
+    display: none;
 }
 
 /* Header Text */
