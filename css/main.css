@@ -272,7 +272,7 @@ textarea {
 * ---------Light Styles---------
 */
 
-/* General Styles */
+/* || General Styles */
 
 :root {
   /* colors */
@@ -321,7 +321,33 @@ p {
     font-size: 1.2rem;
 }
 
-/* || Header and Main Navigation */
+/* || Header and Main Content */
+
+main {
+    margin: 1rem;
+}
+
+.day-toggle {
+    position: absolute;
+    top: 1.4rem;
+    right: 2%;
+    padding: .5rem;
+    border-radius: 100%;
+    background-color: var(--deep-space-sparkle);
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.day-toggle:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.day-toggle .dark-mode {
+    display: none;
+}
+
+/* || Footer and  Navigation */
 
 nav {
     width: 100%;
@@ -422,21 +448,48 @@ nav {
     flex-flow: nowrap;
     justify-content: space-around;
     align-items: center;
+    padding: 8px;
     font-size: 90%;
 }
 
 .navitem.white:hover {
-    padding-bottom: 1rem;
+    /* padding-top: 14px; */
+    padding-bottom: 8px;
     cursor: default;
 }
 
 .footer-nav {
     color: var(--black);
+    text-transform: none;
 }
 
-.footer-nav:hover {
+.footer-nav a {
+    text-decoration: none;
+}
+
+.footer-nav a:visited {
+    color: var(--black);
+}
+
+.footer-nav a:hover {
     color: var(--deep-space-sparkle);
-    cursor: pointer;
+}
+
+.negative {
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: normal;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.negative:hover {
+    background-color: rgb(84,11,14, 0.9);
+    color: var(--black);
+}
+
+.negative a:visited {
+    color: var(--white);
 }
 
 .expand {
@@ -445,46 +498,8 @@ nav {
     border-radius: 0;
 }
 
-.day-toggle {
-    position: absolute;
-    top: 1.4rem;
-    right: 2%;
-    padding: .5rem;
-    border-radius: 100%;
-    background-color: var(--deep-space-sparkle);
-    z-index: 1;
-    transition: transform 0.3s ease;
-}
-
-.day-toggle:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-}
-
-.day-toggle .dark-mode {
-    display: none;
-}
-
-/* Header Text */
-
-hgroup {
-    width: 100%;
-    z-index: -1;
-    /* overflow: hidden; */
-    font-stretch: expanded;
-}
-
-hgroup h1 {
-    line-height: 0;
-    margin-top: 6.3rem;
-    margin-bottom: 8.3rem;
-    font-size: 10rem;
-    font-stretch: expanded;
-    white-space: nowrap;
-    opacity: 0.5;
-}
-
 /* || Hello and CV area */
+
 .block-container-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -511,20 +526,17 @@ hgroup h1 {
 
 
 /* || Projects */
+
 .one-third-grid {
     background-color: var(--white);
     border: 3px solid var(--deep-space-sparkle);
 }
 
-
-/* || Footer */
-
-
 /*
 * ---------Dark Styles---------
 */
 
-/* General Styles */
+/* || General Styles */
 .dark {
     transition: display .5s ease;
 }
@@ -534,7 +546,7 @@ body.dark {
     background-color: var(--black);
 }
 
-/* || Header and Main Navigation */
+/* || Footer and Navigation */
 
 .dark nav {
     background: linear-gradient(
@@ -546,45 +558,70 @@ body.dark {
 
 .dark .navitem {
     padding: 14px;
+    padding-bottom: 16px;
 }
 
 .dark .navitem:hover {
     padding-top: 1rem;
-    padding-bottom: 1.625rem;
+    padding-bottom: 1.4375rem;
 }
 
 .dark .auburn {
     background-color: var(--black);
     border: 3px var(--auburn) solid;
+    border-bottom: none;
     color: var(--auburn);
 }
 
 .dark .deep-space-sparkle {
     background-color: var(--black);
     border: 3px var(--deep-space-sparkle) solid;
+    border-bottom: none;
     color: var(--deep-space-sparkle);
 }
 
 .dark .indian-yellow {
     background-color: var(--black);
     border: 3px var(--indian-yellow) solid;
+    border-bottom: 3px var(--white) solid;
     color: var(--indian-yellow);
 }
 
 .dark .white {
     background-color: var(--black);
+    padding: 7px;
+    padding-top: 5px;
 }
 
 .dark .white:hover {
-    padding-bottom: 14px;
+    padding: 7px;
 }
 
 .dark .footer-nav {
     color: var(--white);
 }
 
-.dark .footer-nav:hover {
+.dark .footer-nav a {
+    color: var(--white);
+}
+
+.dark .footer-nav a:hover {
     color: var(--auburn);
+}
+
+.dark .negative {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.dark .negative:hover {
+    background-color: rgb(51,92,103, 0.9);
+    color: var(--black);
+}
+
+.dark .negative a:visited {
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .dark .expand {
@@ -607,27 +644,8 @@ body.dark {
     display: none;
 }
 
-/* Header Text */
-
-hgroup {
-    width: 100%;
-    z-index: -1;
-    /* overflow: hidden; */
-    font-stretch: expanded;
-}
-
-hgroup h1 {
-    line-height: 0;
-    margin-top: 6.3rem;
-    margin-bottom: 8.3rem;
-    font-size: 10rem;
-    /* letter-spacing: -1.57rem; */
-    font-stretch: expanded;
-    white-space: nowrap;
-    opacity: 0.5;
-}
-
 /* || Hello and CV area */
+
 .block-container-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -652,16 +670,9 @@ hgroup h1 {
     background-color: #1E1E1E;
 }
 
-.half-width-block p, h2, li {
-
-}
-
-
 /* || Projects */
+
 .one-third-grid {
     background-color: var(--white);
     border: 3px solid var(--deep-space-sparkle);
 }
-
-
-/* || Footer */

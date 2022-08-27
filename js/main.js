@@ -22,3 +22,8 @@ const mainBody = document.getElementsByTagName('body')[0];
 function toggleMode() {
     mainBody.classList.toggle('dark');
 }
+
+// Date
+let date = new Date();
+let year = date.getFullYear();
+document.getElementsByClassName('date')[0].innerHTML = year;
