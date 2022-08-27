@@ -603,7 +603,7 @@ body.dark {
 }
 
 .dark .day-toggle {
-    background-color: var(--white);
+    background-color: var(--rosewood);
 }
 
 .dark .day-toggle .dark-mode {
