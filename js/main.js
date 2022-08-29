@@ -1,4 +1,4 @@
-// Nav item expander function
+// Nav item expander
 const navItems = document.getElementsByClassName('navitem');
 
 for (let i = 0; i < navItems.length; i++) {
@@ -12,11 +12,31 @@ for (let i = 0; i < navItems.length; i++) {
         if (setClasses) {
             this.classList.toggle('expand');
         }
+        let hasExpand = this.classList.contains('expand');
+        if (hasExpand) {
+            let blocks = document.getElementsByClassName('block');
+            for (let i = 0; i < blocks.length; i++) {
+                const block = blocks[i];
+                console.log('HEY');
+                if (block.classList.contains('show')) {
+                    block.classList.remove('show')
+                } else {
+                    block.classList.toggle('show');
+                }
+                // let setStyles = !block.classList.contains('show');
+                // for (let thing of block) {
+                //     console.log(thing);
+                //     thing.classList.remove('show');
+                // }
+                // if (setStyles) {
+                //     block.classList.toggle('show');
+                // }
+            }
+        }
     });
 }
 
-
-// Ligh/dark theme switch function
+// Light/dark theme switch
 const mainBody = document.getElementsByTagName('body')[0];
 
 function toggleMode() {
