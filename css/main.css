@@ -332,9 +332,9 @@ main {
 
 .day-toggle {
     position: absolute;
-    top: 1.4rem;
+    top: 1.6rem;
     right: 2%;
-    padding: .5rem;
+    padding: .4rem;
     border-radius: 100%;
     background-color: var(--deep-space-sparkle);
     z-index: 1;
@@ -350,18 +350,13 @@ main {
     display: none;
 }
 
-/* || Footer and  Navigation */
+/* || Navigation */
 
 nav {
     width: 100%;
     position: fixed;
     bottom: 0;
-    overflow: hidden;
     color: var(--white);
-    text-align: center;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     background: linear-gradient(
         var(--white) 20%, 
         var(--auburn) 20% 40%, 
@@ -374,9 +369,10 @@ nav {
     position: relative;
     padding: 1rem;
     border-radius: 10px 10px 0 0;
+    text-align: center;
     cursor: pointer;
     line-height: 1;
-    font-size: 120%;
+    color: var(--deep-space-sparkle);
     transition: padding-bottom 0.3s ease;
     transition: font-size 0.3s ease;
 }
@@ -386,7 +382,16 @@ nav {
     font-size: 150%;
 }
 
+.navitem span {
+    color: var(--white);
+    font-size: 120%;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .navitem h1 {
+    color: var(--white);
     display: none;
 }
 
@@ -402,10 +407,20 @@ nav {
     display: none;
 }
 
-.navitem.expand {
+/* .navitem.expand {
     height: 50vh;
-    z-index: -1;
+    z-index: 1;
     transition: top ease-out .5s;
+} */
+
+nav .navitem:has(expand) {
+    height: 100%;
+}
+
+.navitem.expand:hover {
+    padding-bottom: 1rem;
+    cursor: default;
+    font-size: 100%;
 }
 
 .navitem.expand span {
@@ -414,6 +429,12 @@ nav {
 
 .navitem.expand h1 {
     display: inline;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;text-align: center;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .navitem.expand .block-container-two {
@@ -440,12 +461,14 @@ nav {
     background-color: var(--indian-yellow);
 }
 
+/* || Footer */
+
 .white {
     background-color: var(--white);
 }
 
 .navitem.white {
-    width: 90%;
+    width: 100%;
     display: inline-flex;
     flex-direction: row;
     flex-flow: nowrap;
@@ -456,7 +479,6 @@ nav {
 }
 
 .navitem.white:hover {
-    /* padding-top: 14px; */
     padding-bottom: 8px;
     cursor: default;
 }
@@ -464,6 +486,15 @@ nav {
 .footer-nav {
     color: var(--black);
     text-transform: none;
+    letter-spacing: 1px;
+}
+
+.footer-nav span.date {
+    color: var(--black);
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 90%;
 }
 
 .footer-nav a {
@@ -487,7 +518,7 @@ nav {
 }
 
 .negative:hover {
-    background-color: rgb(84,11,14, 0.9);
+    background-color: var(--deep-space-sparkle);
     color: var(--black);
 }
 
@@ -503,10 +534,19 @@ nav {
 
 /* || Hello and CV area */
 
+.block {
+    display: none;
+}
+
+.block.show {
+    display: block;
+}
+
 .block-container-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2%;
+    background-color: var(--auburn);
 }
 
 .half-width-block {
@@ -611,11 +651,20 @@ body.dark {
 }
 
 .dark .white:hover {
-    padding: 7px;
+    padding: 5px;
+    padding-bottom: 7px;
 }
 
 .dark .footer-nav {
     color: var(--white);
+}
+
+.dark .footer-nav span.date {
+    color: var(--black);
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 90%;
 }
 
 .dark .footer-nav a {
@@ -623,7 +672,7 @@ body.dark {
 }
 
 .dark .footer-nav a:hover {
-    color: rgb(51,92,103, 0.9);
+    color: var(--auburn);
 }
 
 .dark .negative {
@@ -632,8 +681,12 @@ body.dark {
 }
 
 .dark .negative:hover {
-    background-color: rgb(51,92,103, 0.9);
-    color: var(--black);
+    background-color: var(--auburn);
+    color: var(--white);
+}
+
+.dark .negative a:hover {
+    color: var(--white);
 }
 
 .dark .negative a:visited {

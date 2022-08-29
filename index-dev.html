@@ -25,84 +25,92 @@
 <body>
     <header>
         <div class="day-toggle" onclick="toggleMode()">
-            <img class="dark-mode" src="img/sun_logo.svg" alt="sun logo" width="42" height="42">
-            <img class="light-mode" src="img/moon_logo.svg" alt="sun logo" width="42" height="42">
+            <img class="dark-mode" src="img/sun_logo.svg" alt="sun logo" width="35" height="35">
+            <img class="light-mode" src="img/moon_logo.svg" alt="sun logo" width="35" height="35">
         </div>
     </header>
     <main>
         <h1>Jesse Sherwood</h1>
     </main>
+    <div class="block">
+        <header>
+            <h1>CV</h1>
+        </header>
+        <section class="block-container-two">
+            <article class="half-width-block">
+                <header>
+                    <h2>CV</h2>
+                </header>
+                <section>
+                    <p>This is a paragraph about me as a developer.</p>
+                </section>
+            </article>
+            <article class="half-width-block">
+                <header>
+                    <h2>Stuff I can do</h2>
+                </header>
+                <section>
+                    <ul>
+                        <li>HTML, CSS, JavaScript, PHP, SQL</li>
+                        <li>JIRA, Figma</li>
+                        <li>And some more stuff</li>
+                    </ul>
+                </section>
+            </article>
+        </section>
+    </div>
+    <div class="block">
+        <h1>Projects</h1>
+        <section class="block-container-three">
+            <article class="one-third-grid">
+                <header>
+                    <h2>Project #1</h2>
+                </header>
+                <section>
+                    <img src="img/placeholder.jpeg" alt="Code" width="30%" height="" />
+                    <p>This is the description.</p>
+                    <p>This is the tech used.</p>
+                </section>
+            </article>
+            <article class="one-third-grid">
+                <header>
+                    <h2>Project #2</h2>
+                </header>
+                <section>
+                    <img src="img/placeholder.jpeg" alt="Code" width="30%" height="" />
+                    <p>This is the description.</p>
+                    <p>This is the tech used.</p>
+                </section>
+            </article>
+        </section>
+    </div>
+    <div class="block">
+        <h1>Contact</h1>
+        <section class="full-width-block">
+            <article>
+                <section>
+                    <form action="/action_page.php">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname" value="John"><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+                </section>
+            </article>
+        </section>
+    </div>
     <footer>
         <nav>
             <div class="navitem auburn">
                 <span>CV</span>
-                <h1>CV</h1>
-                <section class="block-container-two">
-                    <article class="half-width-block">
-                        <header>
-                            <h2>Hey there</h2>
-                        </header>
-                        <section>
-                            <p>This is a paragraph about me as a developer.</p>
-                        </section>
-                    </article>
-                    <article class="half-width-block">
-                        <header>
-                            <h2>Stuff I can do</h2>
-                        </header>
-                        <section>
-                            <ul>
-                                <li>HTML, CSS, JavaScript, PHP, SQL</li>
-                                <li>JIRA, Figma</li>
-                                <li>And some more stuff</li>
-                            </ul>
-                        </section>
-                    </article>
-                </section>
             </div>
             <div class="navitem deep-space-sparkle">
                 <span>Projects</span>
-                <h1>Projects</h1>
-                <section class="block-container-three">
-                    <article class="one-third-grid">
-                        <header>
-                            <h2>Project #1</h2>
-                        </header>
-                        <section>
-                            <img src="img/placeholder.jpeg" alt="Code" width="30%" height="" />
-                            <p>This is the description.</p>
-                            <p>This is the tech used.</p>
-                        </section>
-                    </article>
-                    <article class="one-third-grid">
-                        <header>
-                            <h2>Project #2</h2>
-                        </header>
-                        <section>
-                            <img src="img/placeholder.jpeg" alt="Code" width="30%" height="" />
-                            <p>This is the description.</p>
-                            <p>This is the tech used.</p>
-                        </section>
-                    </article>
-                </section>
             </div>
             <div class="navitem indian-yellow">
                 <span>Contact</span>
-                <h1>Contact</h1>
-                <section class="full-width-block">
-                    <article>
-                        <section>
-                            <form action="/action_page.php">
-                                <label for="fname">First name:</label><br>
-                                <input type="text" id="fname" name="fname" value="John"><br>
-                                <label for="lname">Last name:</label><br>
-                                <input type="text" id="lname" name="lname" value="Doe"><br><br>
-                                <input type="submit" value="Submit">
-                            </form>
-                            <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-                        </section>
-                    </article>
-                </section>
             </div>
             <div class="navitem white">
                 <div class="footer-nav"><a href="">linkedin</a></div>
