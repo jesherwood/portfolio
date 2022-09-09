@@ -324,21 +324,28 @@ p {
 /* || Header and Main Content */
 
 main {
-    margin-top: 1rem;
+    padding-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    transition: 0.3s ease 0s;
+    background-color: var(--black);
 }
 
 .day-toggle {
     position: absolute;
-    top: 1.6rem;
+    right: -50px;
+}
+
+.day-toggle.live {
+    top: 2.5rem;
     right: 2%;
     padding: .4rem;
     border-radius: 100%;
     background-color: var(--deep-space-sparkle);
     z-index: 1;
     transition: transform 0.3s ease;
+    transition: right 0.5s linear 0.5s;
 }
 
 .day-toggle:hover {
@@ -350,6 +357,66 @@ main {
     display: none;
 }
 
+.home {
+    background-color: var(--white);
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+}
+
+.home .menu {
+    display: none;
+    transition: 1s ease 1s;
+}
+
+.home.closed h1 {
+    display: none;
+}
+
+.home.closed p.menu {
+    display: inline-block;
+    font-size: 120%;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.block {
+  display: none;
+}
+
+.block-container-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2%;
+  background-color: var(--auburn);
+}
+
+.half-width-block {
+  background-color: var(--white);
+  border: 3px solid var(--deep-space-sparkle);
+  position: relative;
+  flex-basis: calc(25% - 10px);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.half-width-block::before {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  background-color: #1E1E1E;
+}
+
+/* || Projects */
+
+.one-third-grid {
+  background-color: var(--white);
+  border: 3px solid var(--deep-space-sparkle);
+}
+
 /* || Navigation */
 
 nav {
@@ -358,9 +425,9 @@ nav {
     bottom: 0;
     color: var(--white);
     background: linear-gradient(
-        var(--white) 20%, 
-        var(--auburn) 20% 40%, 
-        var(--deep-space-sparkle) 40% 60%, 
+        var(--white) 20%,
+        var(--auburn) 20% 40%,
+        var(--deep-space-sparkle) 40% 60%,
         var(--white) 60% 80%);
 }
 
@@ -390,65 +457,6 @@ nav {
     text-transform: uppercase;
 }
 
-.navitem h1 {
-    color: var(--white);
-    display: none;
-}
-
-.navitem .block-container-two {
-    display: none;
-}
-
-.navitem .block-container-three {
-    display: none;
-}
-
-.navitem .full-width-block {
-    display: none;
-}
-
-/* .navitem.expand {
-    height: 50vh;
-    z-index: 1;
-    transition: top ease-out .5s;
-} */
-
-nav .navitem:has(expand) {
-    height: 100%;
-}
-
-.navitem.expand:hover {
-    padding-bottom: 1rem;
-    cursor: default;
-    font-size: 100%;
-}
-
-.navitem.expand span {
-    display: none;
-}
-
-.navitem.expand h1 {
-    display: inline;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;text-align: center;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.navitem.expand .block-container-two {
-    display: block;
-}
-
-.navitem.expand .block-container-three {
-    display: block;
-}
-
-.navitem.expand .full-width-block {
-    display: block;
-}
-
 .auburn {
     background-color: var(--auburn);
 }
@@ -459,6 +467,11 @@ nav .navitem:has(expand) {
 
 .indian-yellow {
     background-color: var(--indian-yellow);
+}
+
+.selected {
+    /* display: none; */
+    background-color: var(--black);
 }
 
 /* || Footer */
@@ -526,55 +539,6 @@ nav .navitem:has(expand) {
     color: var(--white);
 }
 
-.expand {
-    top: 50px;
-    height: 100%;
-    border-radius: 0;
-}
-
-/* || Hello and CV area */
-
-.block {
-    display: none;
-}
-
-.block.show {
-    display: block;
-}
-
-.block-container-two {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2%;
-    background-color: var(--auburn);
-}
-
-.half-width-block {
-    background-color: var(--white);
-    border: 3px solid var(--deep-space-sparkle);
-    position: relative;
-    flex-basis: calc(25% - 10px);
-    margin-bottom: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-.half-width-block::before {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    padding: 5%;
-    background-color: #1E1E1E;
-}
-
-
-/* || Projects */
-
-.one-third-grid {
-    background-color: var(--white);
-    border: 3px solid var(--deep-space-sparkle);
-}
-
 /*
 * ---------Dark Styles---------
 */
@@ -603,13 +567,45 @@ body.dark {
     display: none;
 }
 
+
+.block-container-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2%;
+}
+
+.half-width-block {
+  background-color: var(--white);
+  border: 3px solid var(--deep-space-sparkle);
+  position: relative;
+  flex-basis: calc(25% - 10px);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.half-width-block::before {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  padding: 5%;
+  background-color: #1E1E1E;
+}
+
+/* || Projects */
+
+.one-third-grid {
+  background-color: var(--white);
+  border: 3px solid var(--deep-space-sparkle);
+}
+
 /* || Footer and Navigation */
 
 .dark nav {
     background: linear-gradient(
-        var(--black) 20%, 
-        var(--auburn) 20% 40%, 
-        var(--deep-space-sparkle) 40% 60%, 
+        var(--black) 20%,
+        var(--auburn) 20% 40%,
+        var(--deep-space-sparkle) 40% 60%,
         var(--black) 60% 80%);
 }
 
@@ -700,37 +696,4 @@ body.dark {
     width: 97.4%;
     border: 6px solid;
     border-radius: 0;
-}
-
-/* || Hello and CV area */
-
-.block-container-two {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2%;
-}
-
-.half-width-block {
-    background-color: var(--white);
-    border: 3px solid var(--deep-space-sparkle);
-    position: relative;
-    flex-basis: calc(25% - 10px);
-    margin-bottom: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-.half-width-block::before {
-    aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    padding: 5%;
-    background-color: #1E1E1E;
-}
-
-/* || Projects */
-
-.one-third-grid {
-    background-color: var(--white);
-    border: 3px solid var(--deep-space-sparkle);
 }
