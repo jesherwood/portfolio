@@ -324,17 +324,20 @@ p {
 /* || Header and Main Content */
 
 main {
+    position: fixed;
+    width: 100%;
     padding-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     transition: 0.3s ease 0s;
     background-color: var(--black);
+    height: 2rem;
 }
 
 .day-toggle {
     position: absolute;
-    right: -50px;
+    right: -5%;
 }
 
 .day-toggle.live {
@@ -363,9 +366,19 @@ main {
     padding: 1rem;
 }
 
+.home h1 {
+    transition: display 0.5s linear 0.5s;
+}
+
 .home .menu {
     display: none;
-    transition: 1s ease 1s;
+    transition: display 0.5s linear 0.5s;
+}
+
+.home.closed {
+    position: fixed;
+    cursor: pointer;
+    width: 100%;
 }
 
 .home.closed h1 {
@@ -382,7 +395,25 @@ main {
 }
 
 .block {
-  display: none;
+    position: fixed;
+    width: 100%;
+    height: 1px;
+    top: 100%;
+    transition:
+        height 1s ease,
+        top 1s ease;
+}
+
+.block h1 {
+    color: var(--white);
+}
+
+.block.expand {
+    margin-top: 3.8rem;
+    top: 0;
+    height: 90vh;
+    overflow: scroll;
+    border-radius: 10px 10px 0 0;
 }
 
 .block-container-two {
@@ -410,7 +441,7 @@ main {
   background-color: #1E1E1E;
 }
 
-/* || Projects */
+    /* Projects */
 
 .one-third-grid {
   background-color: var(--white);
@@ -470,8 +501,7 @@ nav {
 }
 
 .selected {
-    /* display: none; */
-    background-color: var(--black);
+    display: none;
 }
 
 /* || Footer */
@@ -545,7 +575,7 @@ nav {
 
 /* || General Styles */
 .dark {
-    transition: display .5s ease;
+    transition: background-color 0.5s ease;
 }
 
 body.dark {
@@ -620,6 +650,7 @@ body.dark {
 }
 
 .dark .auburn {
+    transition: background-color 0.5s ease;
     background-color: var(--black);
     border: 3px var(--auburn) solid;
     border-bottom: none;
@@ -627,6 +658,7 @@ body.dark {
 }
 
 .dark .deep-space-sparkle {
+    transition: background-color 0.5s ease;
     background-color: var(--black);
     border: 3px var(--deep-space-sparkle) solid;
     border-bottom: none;
@@ -634,6 +666,7 @@ body.dark {
 }
 
 .dark .indian-yellow {
+    transition: background-color 0.5s ease;
     background-color: var(--black);
     border: 3px var(--indian-yellow) solid;
     border-bottom: 3px var(--white) solid;
