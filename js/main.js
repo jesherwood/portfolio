@@ -15,6 +15,7 @@ window.addEventListener('load', (slideFromRight) => {
 // || NAVIGATION AND MAIN CONTENT ||
 
 // open/close nav items & blocks
+const nav = document.getElementsByTagName('nav')[0];
 const navItems = document.getElementsByClassName('navitem');
 const landingContent = document.getElementsByClassName('home')[0];
 const main = document.getElementsByTagName('main')[0];
@@ -34,10 +35,19 @@ for (let i = 0; i < navItems.length; i++) {
             this.classList.toggle('selected');
             if (this.classList.contains('auburn')) {
                 auburnBlock.classList.add('expand');
+                nav.classList.add('auburn-selected');
+                nav.classList.remove('ds-sparkle-selected');
+                nav.classList.remove('i-yellow-selected');
             } else if (this.classList.contains('deep-space-sparkle')) {
                 deepSpaceSparkleBlock.classList.add('expand');
+                nav.classList.add('ds-sparkle-selected');
+                nav.classList.remove('i-yellow-selected');
+                nav.classList.remove('auburn-selected');
             } else {
                 indianYellowBlock.classList.add('expand');
+                nav.classList.add('i-yellow-selected');
+                nav.classList.remove('auburn-selected');
+                nav.classList.remove('ds-sparkle-selected');
             }
         }
         landingContent.classList.add('closed');
@@ -55,21 +65,28 @@ landingContent.addEventListener('click', function() {
     auburnBlock.classList.remove('expand');
     deepSpaceSparkleBlock.classList.remove('expand');
     indianYellowBlock.classList.remove('expand');
+    nav.classList.remove('auburn-selected');
+    nav.classList.remove('ds-sparkle-selected');
+    nav.classList.remove('i-yellow-selected');
 });
 
 //close item when header is clicked
-// const closer = document.getElementsByClassName('closer');
-// for (let i = 0; i < closer.length; i++) {
-//     closer[i].addEventListener('click', function() {
-//         let blocks = document.getElementsByClassName('block');
-//         blocks[0].classList.remove('expand');
-//         navItems[0].classList.remove('selected')
-//         for (let j = 0; j < blocks; j++) {
-//             blocks[j].classList.remove('expand');
-//             console.log('FUCK');
-//         }
-//     });
-// }
+const closer = document.getElementsByClassName('closer');
+for (let i = 0; i < closer.length; i++) {
+    closer[i].addEventListener('click', function() {
+        auburnBlock.classList.remove('expand');
+        deepSpaceSparkleBlock.classList.remove('expand');
+        indianYellowBlock.classList.remove('expand');
+        for (k = 0; k < navItems.length; k++) {
+            navItems[k].classList.remove('selected');
+        }
+        landingContent.classList.remove('closed');
+        main.style.paddingTop = '1rem';
+        nav.classList.remove('auburn-selected');
+        nav.classList.remove('ds-sparkle-selected');
+        nav.classList.remove('i-yellow-selected');
+    });
+}
 
 // || DATE IN FOOTER ||
 let date = new Date();

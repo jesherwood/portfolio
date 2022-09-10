@@ -368,7 +368,7 @@ main {
 }
 
 .home h1 {
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .home .menu {
@@ -383,13 +383,18 @@ main {
 }
 
 .home.closed h1 {
+    display: none;
+    transition: all 0.5s;
+}
+
+.home.closed span:before {
+    content: 'Home';
     font-family: 'Open Sans', sans-serif;
     font-size: 120%;
     font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
     line-height: 1;
-    transition: all 0.5s;
 }
 
 .block {
@@ -398,8 +403,12 @@ main {
     height: 1px;
     top: 100%;
     transition:
-        height 1s ease,
-        top 1s ease;
+        height 0.7s ease,
+        top 0.7s ease;
+}
+
+.block header.closer {
+    cursor: pointer;
 }
 
 .block h1 {
@@ -415,20 +424,21 @@ main {
 }
 
 .block-container-two {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2%;
-  background-color: var(--auburn);
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2%;
+    background-color: var(--auburn);
 }
 
 .half-width-block {
   background-color: var(--white);
-  border: 3px solid var(--deep-space-sparkle);
   position: relative;
   flex-basis: calc(25% - 10px);
   margin-bottom: 1rem;
   padding: 1rem;
   box-sizing: border-box;
+  height: 50vh;
 }
 
 .half-width-block::before {
@@ -443,7 +453,6 @@ main {
 
 .one-third-grid {
   background-color: var(--white);
-  border: 3px solid var(--deep-space-sparkle);
 }
 
 /* || Navigation */
@@ -455,6 +464,31 @@ nav {
     color: var(--white);
     background: linear-gradient(
         var(--white) 20%,
+        var(--auburn) 20% 40%,
+        var(--deep-space-sparkle) 40% 60%,
+        var(--white) 60% 80%);
+    transition: background 0.6s ease;
+}
+
+nav.auburn-selected {
+    background: linear-gradient(
+        var(--auburn) 20%,
+        var(--deep-space-sparkle) 20% 40%,
+        var(--white) 40% 60%,
+        var(--white) 60% 80%);
+}
+
+nav.ds-sparkle-selected {
+    background: linear-gradient(
+        var(--deep-space-sparkle) 20%,
+        var(--auburn) 20% 40%,
+        var(--auburn) 40% 60%,
+        var(--white) 60% 80%);
+}
+
+nav.i-yellow-selected {
+    background: linear-gradient(
+        var(--indian-yellow) 20%,
         var(--auburn) 20% 40%,
         var(--deep-space-sparkle) 40% 60%,
         var(--white) 60% 80%);
@@ -593,38 +627,6 @@ body.dark {
 
 .dark .day-toggle .light-mode {
     display: none;
-}
-
-
-.block-container-two {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2%;
-}
-
-.half-width-block {
-  background-color: var(--white);
-  border: 3px solid var(--deep-space-sparkle);
-  position: relative;
-  flex-basis: calc(25% - 10px);
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.half-width-block::before {
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  padding: 5%;
-  background-color: #1E1E1E;
-}
-
-/* || Projects */
-
-.one-third-grid {
-  background-color: var(--white);
-  border: 3px solid var(--deep-space-sparkle);
 }
 
 /* || Footer and Navigation */
