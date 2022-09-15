@@ -127,14 +127,10 @@ if (window.location.href.indexOf("#cv") > -1) {
 
 // || GROW UNDERLINES LEFT ||
 const line = document.getElementsByClassName('line');
-const homeText = document.getElementsByClassName('home-text');
 
 window.addEventListener('load', (slideFromLeft) => {
     for (i = 0; i < line.length; i++) {
         line[i].classList.toggle('grow');
-    }
-    for (i = 0; i < line.length; i++) {
-        homeText[i].classList.toggle('grow');
     }
 });
 

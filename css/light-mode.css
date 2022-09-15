@@ -112,9 +112,7 @@ main {
 
 .home h1  {
     text-align: left;
-    font-size: 6vw;
-    opacity: 0;
-    transition: opacity 5s ease;
+    font-size: 5vw;
 }
 
 .home h1:first-of-type {
@@ -133,11 +131,23 @@ main {
     padding-left: 26%;
 }
 
-.home h1.grow {
-    opacity: 1;
+.home h1:nth-of-type(5) {
+    padding-left: 26%;
+    opacity: 0.5;
 }
 
-.home-background .one {
+.home h1:nth-of-type(6) {
+    padding-left: 16%;
+    opacity: 0.5;
+}
+
+.home h1:nth-of-type(7) {
+    padding-left: 6%;
+    opacity: 0.5;
+}
+
+.home h1:nth-of-type(8) {
+    padding-left: 1%;
     opacity: 0.5;
 }
 
@@ -160,6 +170,10 @@ main {
     margin: 0;
     width: 0%;
     transition: width 1s ease;
+}
+
+.line.mb {
+    margin-bottom: 5vh;
 }
 
 .line.auburn.grow {
