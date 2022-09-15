@@ -22,6 +22,7 @@ const main = document.getElementsByTagName('main')[0];
 const auburnBlock = document.getElementsByClassName('block')[0];
 const deepSpaceSparkleBlock = document.getElementsByClassName('block')[1];
 const indianYellowBlock = document.getElementsByClassName('block')[2];
+let url = window.location.href;
 
 for (let i = 0; i < navItems.length; i++) {
     navItems[i].addEventListener('click', function() {
@@ -36,6 +37,11 @@ for (let i = 0; i < navItems.length; i++) {
             if (this.classList.contains('auburn')) {
                 auburnBlock.classList.add('expand');
                 nav.classList.add('auburn-selected');
+                if ((auburnBlock.classList.contains('expand')) && !(url.indexOf('#cv') > -1)) {
+                    console.log('Hey');
+                    // let newUrl = url.slice(0, url.indexOf('#cv'));
+                    // location.href = newUrl;
+                }
                 nav.classList.remove('ds-sparkle-selected');
                 nav.classList.remove('i-yellow-selected');
             } else if (this.classList.contains('deep-space-sparkle')) {
@@ -61,6 +67,10 @@ landingContent.addEventListener('click', function() {
         navItems[i].classList.remove('selected');
         landingContent.classList.remove('closed');
         main.style.paddingTop = '1rem';
+        if (url.indexOf('#') > -1) {
+            let newUrl = url.slice(0, url.indexOf('#'));
+            location.href = newUrl;
+        }
     }
     auburnBlock.classList.remove('expand');
     deepSpaceSparkleBlock.classList.remove('expand');
@@ -87,6 +97,46 @@ for (let i = 0; i < closer.length; i++) {
         nav.classList.remove('i-yellow-selected');
     });
 }
+
+// open tabs when url includes id
+if (window.location.href.indexOf("#cv") > -1) {
+    auburnBlock.classList.add('expand');
+    navItems[0].classList.add('selected');
+    nav.classList.add('auburn-selected');
+    nav.classList.remove('ds-sparkle-selected');
+    nav.classList.remove('i-yellow-selected');
+    landingContent.classList.add('closed');
+    main.style.paddingTop = '0.5rem';
+} else if (window.location.href.indexOf("#projects") > -1) {
+    deepSpaceSparkleBlock.classList.add('expand');
+    navItems[1].classList.add('selected');
+    nav.classList.remove('auburn-selected');
+    nav.classList.add('ds-sparkle-selected');
+    nav.classList.remove('i-yellow-selected');
+    landingContent.classList.add('closed');
+    main.style.paddingTop = '0.5rem';
+} else if (window.location.href.indexOf("#contact") > -1) {
+    indianYellowBlock.classList.add('expand');
+    navItems[2].classList.add('selected');
+    nav.classList.remove('auburn-selected');
+    nav.classList.remove('ds-sparkle-selected');
+    nav.classList.add('i-yellow-selected');
+    landingContent.classList.add('closed');
+    main.style.paddingTop = '0.5rem';
+}
+
+// || GROW UNDERLINES LEFT ||
+const line = document.getElementsByClassName('line');
+const homeText = document.getElementsByClassName('home-text');
+
+window.addEventListener('load', (slideFromLeft) => {
+    for (i = 0; i < line.length; i++) {
+        line[i].classList.toggle('grow');
+    }
+    for (i = 0; i < line.length; i++) {
+        homeText[i].classList.toggle('grow');
+    }
+});
 
 // || DATE IN FOOTER ||
 let date = new Date();
