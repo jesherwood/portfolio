@@ -1,0 +1,125 @@
+/* || General Styles */
+.dark {
+  transition: background-color 0.5s ease;
+}
+
+body.dark {
+  color: var(--indian-yellow);
+  background-color: var(--black);
+}
+
+/* || Header and Main Content */
+
+.dark .day-toggle {
+  background-color: var(--rosewood);
+}
+
+.dark .day-toggle .dark-mode {
+  display: block;
+}
+
+.dark .day-toggle .light-mode {
+  display: none;
+}
+
+/* || Footer and Navigation */
+
+.dark nav {
+  background: linear-gradient(
+      var(--black) 20%,
+      var(--auburn) 20% 40%,
+      var(--deep-space-sparkle) 40% 60%,
+      var(--black) 60% 80%);
+}
+
+.dark .navitem {
+  padding: 14px;
+  padding-bottom: 16px;
+}
+
+.dark .navitem:hover {
+  padding-top: 1rem;
+  padding-bottom: 1.4375rem;
+}
+
+.dark .auburn {
+  transition: background-color 0.5s ease;
+  background-color: var(--black);
+  border: 3px var(--auburn) solid;
+  border-bottom: none;
+  color: var(--auburn);
+}
+
+.dark .deep-space-sparkle {
+  transition: background-color 0.5s ease;
+  background-color: var(--black);
+  border: 3px var(--deep-space-sparkle) solid;
+  border-bottom: none;
+  color: var(--deep-space-sparkle);
+}
+
+.dark .indian-yellow {
+  transition: background-color 0.5s ease;
+  background-color: var(--black);
+  border: 3px var(--indian-yellow) solid;
+  border-bottom: 3px var(--white) solid;
+  color: var(--indian-yellow);
+}
+
+.dark .white {
+  background-color: var(--black);
+  padding: 7px;
+  padding-top: 5px;
+}
+
+.dark .white:hover {
+  padding: 5px;
+  padding-bottom: 7px;
+}
+
+.dark .footer-nav {
+  color: var(--white);
+}
+
+.dark .footer-nav span.date {
+  color: var(--black);
+  text-transform: none;
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-size: 90%;
+}
+
+.dark .footer-nav a {
+  color: var(--white);
+}
+
+.dark .footer-nav a:hover {
+  color: var(--auburn);
+}
+
+.dark .negative {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.dark .negative:hover {
+  background-color: var(--auburn);
+  color: var(--white);
+}
+
+.dark .negative a:hover {
+  color: var(--white);
+}
+
+.dark .negative a:visited {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.dark .expand {
+  top: 0;
+  height: 100%;
+  width: 97.4%;
+  border: 6px solid;
+  border-radius: 0;
+}
