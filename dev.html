@@ -18,8 +18,8 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/light-mode.css">
-    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/dev-css/light-mode.css">
+    <link rel="stylesheet" href="css/dev-css/dark-mode.css">
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -33,15 +33,28 @@
     </header>
     <main>
         <div class="home">
-            <h1 class="home-text">JESSE</h1>
-            <hr class="line auburn">
-            <h1 class="home-text">SHERWOOD</h1>
-            <hr class="line deep-space-sparkle">
-            <h1 class="home-text">FRONT-END</h1>
-            <hr class="line indian-yellow">
-            <h1 class="home-text">DEVELOPER</h1>
-            <hr class="line medium-champagne">
-            <span>Home</span>
+            <header>
+                <h1 class="home-text">JESSE</h1>
+                <hr class="line auburn">
+                <h1 class="home-text">SHERWOOD</h1>
+                <hr class="line deep-space-sparkle">
+                <h1 class="home-text">FRONT-END</h1>
+                <hr class="line indian-yellow">
+                <h1 class="home-text">DEVELOPER</h1>
+                <hr class="line medium-champagne">
+                <span>Home</span>
+            </header>
+            <div class="home-button-container">
+                <a href="#cv"><div class="home-button auburn">CV</div></a>
+                <a href="#projects"><div class="home-button deep-space-sparkle">Projects</div></a>
+                <a href="#contact"><div class="home-button indian-yellow">Contact</div></a>
+            </div>
+        </div>
+        <div class="line-block">
+            <hr class="line auburn angle">
+            <hr class="line deep-space-sparkle angle">
+            <hr class="line indian-yellow angle">
+            <hr class="line medium-champagne angle">
         </div>
         <div class="block auburn" id="cv">
             <header class="closer">
@@ -52,6 +65,7 @@
                     <header>
                         <h2>About me</h2>
                     </header>
+                    <img src="img/my-photo.jpg" alt="Image of Jesse Sherwood">
                     <section>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat sed cras ornare arcu dui vivamus arcu felis. Hac habitasse platea dictumst quisque sagittis purus sit. Dignissim enim sit amet venenatis urna cursus eget.</p>
                         <p>Orci nulla pellentesque dignissim enim sit. Pellentesque elit eget gravida cum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Viverra nam libero justo laoreet sit amet cursus sit amet. Enim neque volutpat ac tincidunt. Fringilla ut morbi tincidunt augue. Interdum consectetur libero id faucibus nisl tincidunt eget nullam. Massa placerat duis ultricies lacus. Tempus iaculis urna id volutpat lacus laoreet. Lectus mauris ultrices eros in cursus turpis massa tincidunt.</p>
@@ -91,8 +105,7 @@
                     <header>
                         <h2>Project #1</h2>
                     </header>
-                    <section>
-                        <img src="img/placeholder.jpeg" alt="Code" width="30%" height="" />
+                    <section class="simons">
                         <p>This is the description.</p>
                         <p>This is the tech used.</p>
                     </section>
@@ -102,11 +115,19 @@
                         <h2>Project #2</h2>
                     </header>
                     <section>
-                        <img src="img/placeholder.jpeg" alt="Code" width="30%" height="" />
                         <p>This is the description.</p>
                         <p>This is the tech used.</p>
                     </section>
                 </article>
+                <article class="one-third-grid">
+                    <header>
+                        <h2>Project #2</h2>
+                    </header>
+                    <section>
+                        <p>This is the description.</p>
+                        <p>This is the tech used.</p>
+                    </section>
+              </article>
             </section>
         </div>
         <div class="block indian-yellow" id="contact">
@@ -143,7 +164,7 @@
             <div class="navitem white">
                 <div class="footer-nav"><a href="">linkedin</a></div>
                 <div class="footer-nav">&copy; jesse sherwood <span class="date"></span></div>
-                <div class="footer-nav negative"><a href="">writing</a></div>
+                <div class="footer-nav negative"><a href="write.html">writing</a></div>
             </div>
         </nav>
     </footer>

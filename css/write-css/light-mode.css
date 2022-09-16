@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;700&display=swap');
+
+:root {
+    --black: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --indian-red: rgb(219, 84, 97);
+    --cultured: rgb(241, 237, 238);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    background-color: var(--black);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.coming-soon {
+    width: 10%;
+    height: 10%;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20%;
+    padding: 10%;
+    background-color: var(--indian-red);
+}
+
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--cultured);
+    padding: 1rem;
+}
+
+li {
+    display: inline-block;
+    font-size: 0.5rem;
+}
+
+a,
+a:hover,
+a:visited {
+    color: var(--indian-red);
+    text-decoration: none;
+    text-transform: uppercase;
+}

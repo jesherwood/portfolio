@@ -13,8 +13,7 @@ window.addEventListener('load', (slideFromRight) => {
 });
 
 // || NAVIGATION AND MAIN CONTENT ||
-
-// open/close nav items & blocks
+    // open/close nav items & blocks
 const nav = document.getElementsByTagName('nav')[0];
 const navItems = document.getElementsByClassName('navitem');
 const landingContent = document.getElementsByClassName('home')[0];
@@ -37,11 +36,6 @@ for (let i = 0; i < navItems.length; i++) {
             if (this.classList.contains('auburn')) {
                 auburnBlock.classList.add('expand');
                 nav.classList.add('auburn-selected');
-                if ((auburnBlock.classList.contains('expand')) && !(url.indexOf('#cv') > -1)) {
-                    console.log('Hey');
-                    // let newUrl = url.slice(0, url.indexOf('#cv'));
-                    // location.href = newUrl;
-                }
                 nav.classList.remove('ds-sparkle-selected');
                 nav.classList.remove('i-yellow-selected');
             } else if (this.classList.contains('deep-space-sparkle')) {
@@ -61,45 +55,9 @@ for (let i = 0; i < navItems.length; i++) {
     });
 }
 
-// close nav items when on home
-landingContent.addEventListener('click', function() {
-    for (let i = 0; i < navItems.length; i++) {
-        navItems[i].classList.remove('selected');
-        landingContent.classList.remove('closed');
-        main.style.paddingTop = '1rem';
-        if (url.indexOf('#') > -1) {
-            let newUrl = url.slice(0, url.indexOf('#'));
-            location.href = newUrl;
-        }
-    }
-    auburnBlock.classList.remove('expand');
-    deepSpaceSparkleBlock.classList.remove('expand');
-    indianYellowBlock.classList.remove('expand');
-    nav.classList.remove('auburn-selected');
-    nav.classList.remove('ds-sparkle-selected');
-    nav.classList.remove('i-yellow-selected');
-});
-
-//close item when header is clicked
-const closer = document.getElementsByClassName('closer');
-for (let i = 0; i < closer.length; i++) {
-    closer[i].addEventListener('click', function() {
-        auburnBlock.classList.remove('expand');
-        deepSpaceSparkleBlock.classList.remove('expand');
-        indianYellowBlock.classList.remove('expand');
-        for (k = 0; k < navItems.length; k++) {
-            navItems[k].classList.remove('selected');
-        }
-        landingContent.classList.remove('closed');
-        main.style.paddingTop = '1rem';
-        nav.classList.remove('auburn-selected');
-        nav.classList.remove('ds-sparkle-selected');
-        nav.classList.remove('i-yellow-selected');
-    });
-}
-
-// open tabs when url includes id
+    // open tabs when url includes id
 if (window.location.href.indexOf("#cv") > -1) {
+    console.log('what');
     auburnBlock.classList.add('expand');
     navItems[0].classList.add('selected');
     nav.classList.add('auburn-selected');
@@ -123,6 +81,43 @@ if (window.location.href.indexOf("#cv") > -1) {
     nav.classList.add('i-yellow-selected');
     landingContent.classList.add('closed');
     main.style.paddingTop = '0.5rem';
+}
+
+    // close nav items when on home
+landingContent.addEventListener('click', function() {
+    for (let i = 0; i < navItems.length; i++) {
+        navItems[i].classList.remove('selected');
+        landingContent.classList.remove('closed');
+        main.style.paddingTop = '1rem';
+        if (url.indexOf('#') > -1) {
+            let newUrl = url.slice(0, url.indexOf('#'));
+            location.href = newUrl;
+        }
+    }
+    auburnBlock.classList.remove('expand');
+    deepSpaceSparkleBlock.classList.remove('expand');
+    indianYellowBlock.classList.remove('expand');
+    nav.classList.remove('auburn-selected');
+    nav.classList.remove('ds-sparkle-selected');
+    nav.classList.remove('i-yellow-selected');
+});
+
+    //close item when header is clicked
+const closer = document.getElementsByClassName('closer');
+for (let i = 0; i < closer.length; i++) {
+    closer[i].addEventListener('click', function() {
+        auburnBlock.classList.remove('expand');
+        deepSpaceSparkleBlock.classList.remove('expand');
+        indianYellowBlock.classList.remove('expand');
+        for (k = 0; k < navItems.length; k++) {
+            navItems[k].classList.remove('selected');
+        }
+        landingContent.classList.remove('closed');
+        main.style.paddingTop = '1rem';
+        nav.classList.remove('auburn-selected');
+        nav.classList.remove('ds-sparkle-selected');
+        nav.classList.remove('i-yellow-selected');
+    });
 }
 
 // || GROW UNDERLINES LEFT ||
