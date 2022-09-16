@@ -126,6 +126,7 @@ main {
 
 .home-button {
     max-width: 5rem;
+    letter-spacing: 1px;
     margin: 1rem;
     margin-bottom: 2rem;
     padding: 1rem;
@@ -405,20 +406,28 @@ header.closer {
 }
 
 /* Projects */
-
 .block-container-three {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 28vw);
+    gap: 2vw;
+    grid-auto-flow: row;
     background-color: var(--l-deep-space-sparkle);
+    margin: 2vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 .one-third-grid {
-    margin: 3rem;
     background-color: var(--white);
+    height: 29vw;
+    border-radius: 10px;
 }
 
 .one-third-grid.simons {
-    background-image: url('img/simons.png');
+    background-image: url('/Users/jsherwood/Documents/js-portfolio-site/img/simons.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
 }
 
 /* Contact */
