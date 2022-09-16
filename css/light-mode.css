@@ -76,6 +76,7 @@ main {
 .day-toggle {
     position: fixed;
     right: -5%;
+    box-shadow: 0px 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .day-toggle.live {
@@ -202,6 +203,7 @@ main {
 
 .block header.closer {
     cursor: pointer;
+    position: sticky;
 }
 
 .block h1 {
@@ -214,6 +216,7 @@ main {
     height: 90vh;
     overflow: scroll;
     border-radius: 10px 10px 0 0;
+    box-shadow: 0px 0 8px rgba(0, 0, 0, 0.8);
 }
 
 header.closer {
@@ -236,9 +239,11 @@ header.closer {
 
 .block-container-two {
     margin: 2rem;
+    margin-bottom: 10rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2%;
+    overflow: scroll;
 }
 
 .half-width-block {
@@ -348,6 +353,7 @@ nav.i-yellow-selected {
     cursor: pointer;
     line-height: 1;
     color: var(--deep-space-sparkle);
+    box-shadow: 0px 0 8px rgba(0, 0, 0, 0.8);
     transition: padding-bottom 0.3s ease;
     transition: font-size 0.3s ease;
 }
