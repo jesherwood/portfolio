@@ -304,6 +304,7 @@ main {
 
 .block {
     position: fixed;
+    overflow: scroll;
     width: 100%;
     height: 1px;
     top: 100%;
@@ -407,19 +408,37 @@ header.closer {
 
 /* Projects */
 .block-container-three {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 28vw);
-    gap: 2vw;
-    grid-auto-flow: row;
-    background-color: var(--l-deep-space-sparkle);
-    margin: 2vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1vw;
+    margin-top: 5vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    color: var(--white);
 }
 
 .one-third-grid {
     background-color: var(--white);
     height: 29vw;
+    flex-grow: 1;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.one-third-grid:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0 6px rgba(0, 0, 0, 0.8);
+}
+
+.shadow-grid {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
 }
 
@@ -427,7 +446,6 @@ header.closer {
     background-image: url('/Users/jsherwood/Documents/js-portfolio-site/img/simons.png');
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.9;
 }
 
 /* Contact */

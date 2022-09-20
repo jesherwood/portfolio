@@ -57,7 +57,6 @@ for (let i = 0; i < navItems.length; i++) {
 
     // open tabs when url includes id
 if (window.location.href.indexOf("#cv") > -1) {
-    console.log('what');
     auburnBlock.classList.add('expand');
     navItems[0].classList.add('selected');
     nav.classList.add('auburn-selected');
