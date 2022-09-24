@@ -155,10 +155,8 @@ footer a:visited {
 }
 
 .dev-footer:hover {
-    transform: scale(1.1);
     background-color: var(--color);
     color: var(--white);
-    border: none;
 }
 
 .dev-footer a:hover {
@@ -167,6 +165,7 @@ footer a:visited {
 
 .dev-footer a:visited:hover {
   color: var(--white);
+  background-color: var(--color);
 }
 
 .dev-footer a,

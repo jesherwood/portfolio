@@ -10,6 +10,30 @@ window.addEventListener('load', (growContent) => {
     }, delayInMilliseconds);
 });
 
+// change section hash on scroll
+
+//...have to fix: it reads the place on the page and overpowers the nav links...
+const sections = document.getElementsByTagName('section');
+
+function updateFragId() {
+    let len = sections.length;
+    for (let i = 0; i < len; i++) {
+        let id = sections[i].id;
+        let rect = sections[i].getBoundingClientRect().y;
+        let pageData = {id:id, rect:rect};
+        let url = window.location.toString();
+        console.log(url);
+        if (pageData.rect > -100 && pageData.rect < 100) {
+            if (pageData.id !== location.hash) {
+                  fragmentId = pageData.id;
+                  var uri = window.location.toString();
+                  console.log(fragmentId);
+                  window.location.hash = fragmentId;
+            }
+        }
+    }
+}
+
 // change site color variable on menu item
 let navItem = document.getElementsByClassName('nav-item');
 
@@ -38,25 +62,9 @@ window.onload = function() {
     }
 };
 
-// change section hash on scroll
-const sections = document.getElementsByTagName('section');
-
-function updateFragId() {
-    let len = sections.length;
-    for (let i = 0; i < len; i++) {
-        let id = sections[i].id;
-        let rect = sections[i].getBoundingClientRect().y;
-        let pageData = {id:id, rect:rect};
-        if (pageData.rect > -100 && pageData.rect < 100) {
-            if (pageData.id !== location.hash.substr(1)) {
-                  fragmentId = pageData.id;
-                  console.log(fragmentId);
-                  window.location.hash = '#' + fragmentId;
-              } else {
-                  return;
-            }
-          }
-    }
-}
-
 window.addEventListener('scroll', updateFragId);
+
+// date in footer
+let date = new Date();
+let year = date.getFullYear();
+document.getElementsByClassName('date')[0].innerHTML = year;
