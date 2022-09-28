@@ -37,15 +37,24 @@ function updateFragId() {
         }
     }
 }
-
 window.addEventListener('scroll', updateFragId);
 
+// turn off scroll function on load to prevent direct links to sections from not working
 
-// turn off above ^^ scroll event when a nav item is clicked and change color
+function pauseScroll() {
+    window.removeEventListener('scroll', updateFragId);
+    setTimeout(() => {
+        window.addEventListener('scroll', updateFragId);
+    }, 100);
+}
+window.addEventListener('load', pauseScroll);
+
+// turn off above scroll function when a nav item is clicked and change color
+
+const navItem = document.getElementsByClassName('nav-item');
+
 function navClick() {
     window.removeEventListener('scroll', updateFragId);
-
-    let navItem = document.getElementsByClassName('nav-item');
 
     navItem[0].addEventListener('click', (colorChange) => {
         document.documentElement.style.setProperty('--color', 'rgb(0, 0, 0)');
@@ -61,6 +70,9 @@ function navClick() {
         window.addEventListener('scroll', updateFragId);
     }, 500);
 }
+
+// navigation selected styling
+
 
 // date in footer
 let date = new Date();
