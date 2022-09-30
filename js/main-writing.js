@@ -1,13 +1,17 @@
-// remove shrink class
-const shrink = document.getElementsByClassName('shrink');
-const delayInMilliseconds = 300;
+// remove resize
+const delayGrow = 300;
+const delayFade = 2300;
 
 window.addEventListener('load', (growContent) => {
     setTimeout(function() {
-        while (shrink.length) {
-            shrink[0].classList.remove('shrink');
-        }
-    }, delayInMilliseconds);
+        document.getElementsByClassName('hero-object')[0].style.transform = 'scale(50%)';
+    }, delayGrow);
+});
+
+window.addEventListener('load', (growContent) => {
+    setTimeout(function() {
+        document.getElementsByClassName('hero-container')[0].classList.add('fade-in');
+    }, delayFade);
 });
 
 // change section hash & color on scroll
@@ -26,12 +30,14 @@ function updateFragId() {
                 window.location.hash = fragmentId;
                 if (new URL(document.URL).hash === '#work') {
                     document.documentElement.style.setProperty('--color', 'rgb(165, 36, 34)');
+                    let workItems = document.getElementsByClassName('work-object');
+                    for (j = 0; j < workItems.length; j++) {
+                        workItems[j].style.animation = 'flowfromtop 1s';
+                    }
                 } else if (new URL(document.URL).hash === '#contact') {
                     document.documentElement.style.setProperty('--color', 'rgb(0, 110, 144)');
                 } else {
                     document.documentElement.style.setProperty('--color', 'rgb(0, 0, 0)');
-                    const noHash = window.location.href.split('#')[0];
-                    window.history.pushState('', 'Home', noHash);
                 }
             }
         }

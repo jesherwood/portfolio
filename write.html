@@ -27,51 +27,81 @@
     <header>
         <nav>
             <ul>
-                <a href="#"><li class="nav-item" onclick="navClick()">home</li></a>
+                <a href=""><li class="nav-item" onclick="navClick()">home</li></a>
                 <a href="#work"><li class="nav-item" onclick="navClick()">work</li></a>
                 <a href="#contact"><li class="nav-item" onclick="navClick()">contact</li></a>
             </ul>
         </nav>
     </header>
-    <section class="home-about">
-        <div class="hero-object shrink"></div>
-        <div class="hero">
-            <h1>jesse sherwood</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-    </section>
-    <section id="work">
-        <div>
-            <h1>work</h1>
-        </div>
-        <section class="work-container">
-            <div class="work-object one">
-                <h2>All Happy Families</h2>
-                <p>Short Story</p>
+    <div class="section-container">
+        <section class="home-about">
+            <div class="hero-container">
+                <div class="hero-object"></div>
+                <div class="hero">
+                    <h1>jesse sherwood</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
             </div>
-            <div class="work-object two">
-                <h2>The Woman With No Name</h2>
-                <p>Screenplay</p>
-            </div>
-            <div class="work-object three">
-                <h2>Kafka's Selfies</h2>
-                <p>Essay</p>
-            </div>
-            <div class="work-object four">
-                <h2>Common Bullet Point of Job Descriptions</h2>
-                <p>Humor</p>
-          </div>
         </section>
-    </section>
-    <section id="contact">
-        <div>
-            <h1>contact</h1>
-        </div>
-  </section>
-    <footer>
-        <div>&copy; jesse sherwood <span class="date"></span></div>
-        <div class="dev-footer"><a href="dev.html">development</a></div>
-    </footer>
+        <section id="work">
+            <div>
+                <h1>work</h1>
+            </div>
+            <div class="work-container">
+                <a href="https://www.saturdayeveningpost.com/2020/01/all-happy-families/" target="_blank">
+                    <div class="work-object one">
+                        <h2>All Happy Families</h2>
+                        <p>Short Story</p>
+                        <p class="descrip">He would never sit around waiting for someone to die, but his three daughters find themselves doing just that, waiting at his deathbed, trying to make sense of his past and their future.</p>
+                    </div>
+                </a>
+                <a href="https://writers.coverfly.com/projects/view/6ecc63b1-0aea-4b3a-b19f-262df75c41b5/The_Woman_With_No_Name" target="_blank">
+                    <div class="work-object two">
+                        <h2>The Woman With No Name</h2>
+                        <p>Screenplay</p>
+                        <p class="descrip">Violence and mayhem ensue after a nameless drifter finds herself facing off against three drug-smuggling brothers whose strip club dominates an oil boomtown turned bust-town in North Dakota.</p>
+                    </div>
+                </a>
+                <a href="https://www.guernicamag.com/kafkas-selfies/" target="_blank">
+                    <div class="work-object three">
+                        <h2>Kafka's Selfies</h2>
+                        <p>Essay</p>
+                        <p class="descrip">A new collection highlights Kafka's Kardashian-esque self-reflection.</p>
+                    </div>
+                </a>
+                <a href="https://www.mcsweeneys.net/articles/translations-of-common-job-descriptions" target="_blank">
+                    <div class="work-object four">
+                        <h2>Translations of Common Job Descriptions</h2>
+                        <p>Humor</p>
+                        <p class="descrip">“Minimum of 2 years of experience in a similar role”
+                          Ideally, you will have at least 45 years’ experience in this exact role. Though, we do want you to be fresh, hip, innovative.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section id="contact">
+            <div>
+                <h1>contact</h1>
+            </div>
+            <div class="container">
+                <form action="action_page.php">
+                    <label for="fname">first name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="your name. . .">
+                    <label for="lname">last name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="your last name. . .">
+                    <label for="email">email</label>
+                    <input type="text" id="email" name="email" placeholder="email. . .">
+                    <label for="subject">message</label>
+                    <textarea id="message" name="message" placeholder="write something. . ." style="height:200px"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div>&copy; jesse sherwood <span class="date"></span></div>
+            <div class="dev-footer"><a href="dev.html">development</a></div>
+        </footer>
+    </div>
     <!-- end content -->
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
