@@ -15,12 +15,12 @@ html {
     --aqua: rgb(61, 250, 255);
     --bitter-lemon: rgb(194, 232, 18);
     --space-cadet: rgb(43, 45, 66);
-    --platinum: rgb(222, 229, 229);
+    --platinum: rgb(169, 178, 172);
     --color: ;
 }
 
 ::selection {
-    background-color: var(--bitter-lemon);
+    background-color: var(--aqua);
 }
 
 body {
@@ -28,7 +28,6 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     color: var(--color);
-    background-color: var(--platinum);
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
     -ms-animation: fadein 2s; /* Internet Explorer */
@@ -62,13 +61,17 @@ nav {
     z-index: 10;
 }
 
+nav:hover {
+    border-color: var(--bitter-lemon);
+}
+
 nav a {
     color: var(--color);
     text-decoration: none;
 }
 
 nav a:hover {
-    opacity: 0.5;
+    color: var(--bitter-lemon);
 }
 
 nav ul {
@@ -88,8 +91,8 @@ nav ul li {
 
 .nav-item:active,
 .nav-item:hover {
-    border-left: 1px solid var(--color);
-    border-right: 1px solid var(--color);
+    border-left: 1px solid var(--bitter-lemon);
+    border-right: 1px solid var(--bitter-lemon);
 }
 
 /* all sections */
@@ -119,7 +122,7 @@ section h1 {
     margin: auto;
 }
 
-.home-about{
+.home-about {
     background-color: var(--white);
 }
 
@@ -133,6 +136,10 @@ section h1 {
     transition: transform 2s ease;
 }
 
+.hero-container:hover .hero-object {
+    border-color: var(--bitter-lemon);
+}
+
 .fade-in .hero-object {
     background: url('/Users/jsherwood/Documents/js-portfolio-site/img/my-photo-BW.png') no-repeat center/100%;
 }
@@ -141,7 +148,13 @@ section h1 {
     position: absolute;
     top: 38vh;
     left: 30%;
+    padding-left: 1rem;
     color: var(--color);
+}
+
+.hero:hover {
+    color: var(--bitter-lemon);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
@@ -192,6 +205,8 @@ section#work {
 
 .work-object:hover {
     transform: scale(1.3);
+    color: var(--bitter-lemon);
+    border-color: var(--bitter-lemon);
 }
 
 .work-object h2 {
@@ -240,7 +255,7 @@ a .work-object {
 
 /* contact */
 section#contact {
-    height: 95vh;
+    height: calc(100vh - 3.25rem);
     background-color: var(--platinum);
 }
 
@@ -248,34 +263,64 @@ section#contact h1 {
     text-align: center;
 }
 
+label {
+    font-size: 2rem;
+}
+
 input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--platinum);
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--platinum);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
 }
 
 input[type=submit] {
-  background-color: var(--blue-sapphire);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    background-color: var(--blue-sapphire);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: var(--blue-sapphire);
+    background-color: var(--blue-sapphire);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--bitter-lemon) inset !important;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--blue-sapphire);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+
+input:focus,
+textarea:focus {
+    background-color: var(--bitter-lemon);
+}
+
+textarea {
+    height: 10rem;
 }
 
 .container {
-  border-radius: 5px;
-  background-color: var(--platinum);
-  padding: 20px;
+    border-radius: 5px;
+    background-color: var(--platinum);
+    padding: 20px;
 }
 
 /* footer */
@@ -285,15 +330,11 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
     bottom: 0;
     padding: 0.5rem;
     background-color: var(--platinum);
     font-size: 0.9rem;
-    border: 1px solid var(--color);
-    border-bottom: none;
+    border-top: 1px solid var(--color);
 }
 
 footer div {

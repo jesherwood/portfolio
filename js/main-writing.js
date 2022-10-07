@@ -77,10 +77,23 @@ function navClick() {
     }, 500);
 }
 
-// navigation selected styling
-
-
 // date in footer
 let date = new Date();
 let year = date.getFullYear();
 document.getElementsByClassName('date')[0].innerHTML = year;
+
+// captcha
+let captcha = new Array();
+
+function createCaptcha() {
+    const activeCaptcha = document.getElementById("captcha");
+    for (i = 0; i < 6; i++) {
+        if (q % 2 == 0) {
+            captcha[i] = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+        } else {
+            captcha[i] = Math.floor(Math.random() * 10 + 0);
+        }
+    }
+    theCaptcha = captcha.join("");
+    activeCaptcha.innerHTML = `${theCaptcha}`;
+}

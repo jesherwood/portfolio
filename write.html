@@ -85,14 +85,24 @@
             </div>
             <div class="container">
                 <form action="action_page.php">
-                    <label for="fname">first name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="your name. . .">
-                    <label for="lname">last name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="your last name. . .">
+                    <label for="name">name</label>
+                    <input type="text" id="fname" name="name" placeholder="your name. . .">
                     <label for="email">email</label>
                     <input type="text" id="email" name="email" placeholder="email. . .">
                     <label for="subject">message</label>
-                    <textarea id="message" name="message" placeholder="write something. . ." style="height:200px"></textarea>
+                    <textarea id="message" name="message" placeholder="write something. . ."></textarea>
+                    <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
+                    <div class="restart">
+                        <a href="#" onclick="createCaptcha()">Change</a>
+                    </div>
+                    <div class="input">
+                        <input
+                            type="text"
+                            name="reCaptcha"
+                            id="reCaptcha"
+                            placeholder="Type The Captcha"
+                        />
+                    </div>
                     <input type="submit" value="Submit">
                 </form>
             </div>
