@@ -16,6 +16,8 @@ html {
     --bitter-lemon: rgb(194, 232, 18);
     --space-cadet: rgb(43, 45, 66);
     --platinum: rgb(169, 178, 172);
+    --selective-yellow: rgb(255, 186, 8);
+    --fiery-rose: rgb(252, 100, 113);
     --color: ;
 }
 
@@ -58,11 +60,8 @@ nav {
     font-weight: 400;
     border: 1px solid var(--color);
     border-top: none;
+    opacity: 0.8;
     z-index: 10;
-}
-
-nav:hover {
-    border-color: var(--bitter-lemon);
 }
 
 nav a {
@@ -71,7 +70,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--bitter-lemon);
+    transform: scale(1.4);
 }
 
 nav ul {
@@ -87,12 +86,6 @@ nav ul li {
     display: inline-block;
     padding: 1rem;
     font-size: 1rem;
-}
-
-.nav-item:active,
-.nav-item:hover {
-    border-left: 1px solid var(--bitter-lemon);
-    border-right: 1px solid var(--bitter-lemon);
 }
 
 /* all sections */
@@ -126,6 +119,12 @@ section h1 {
     background-color: var(--white);
 }
 
+.home-about h2 {
+    position: absolute;
+    font-size: 1000%;
+    opacity: 0.2;
+}
+
 .hero-object {
     margin: auto;
     margin-top: 5vh;
@@ -141,7 +140,7 @@ section h1 {
 }
 
 .fade-in .hero-object {
-    background: url('/Users/jsherwood/Documents/js-portfolio-site/img/my-photo-BW.png') no-repeat center/100%;
+    background: url('img/my-photo-BW.png') no-repeat center/100%;
 }
 
 .hero {
@@ -181,12 +180,10 @@ section#work {
 .work-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
     gap: 5vw;
     margin-top: 2rem;
+    margin-bottom: 5rem;
     font-weight: 400;
-    height: 35vh;
 }
 
 .work-container a {
@@ -201,18 +198,22 @@ section#work {
     border: 1px var(--color) solid;
     direction: rtl;
     transition: transform 0.8s;
+    z-index: 1;
 }
 
 .work-object:hover {
     transform: scale(1.3);
-    color: var(--bitter-lemon);
-    border-color: var(--bitter-lemon);
+    color: var(--selective-yellow);
+    border-color: var(--selective-yellow);
 }
 
-.work-object h2 {
-    width: 30vh;
-    margin-top: -5px;
-    margin-bottom: 0;
+.work-object span {
+    color: var(--selective-yellow);
+    opacity: 0.5;
+}
+
+.work-object:hover span {
+    color: var(--auburn);
 }
 
 .work-object p {
@@ -238,19 +239,109 @@ a .work-object {
 }
 
 .work-object.one:hover {
-    background: url('/Users/jsherwood/Documents/js-portfolio-site/img/families-image-light.png') no-repeat center/100%;
+    background: url('img/cooper-creek-image.png') no-repeat center/100%;
 }
 
 .work-object.two:hover {
-    background: url('/Users/jsherwood/Documents/js-portfolio-site/img/WWNN-image.png') no-repeat center/100%;
+    background: url('img/WWNN-image.png') no-repeat center/100%;
 }
 
 .work-object.three:hover {
-    background: url('/Users/jsherwood/Documents/js-portfolio-site/img/kafka-image.png') no-repeat center/100%;
+    background: url('img/families-image-light.png') no-repeat center/100%;
 }
 
 .work-object.four:hover {
-    background: url('/Users/jsherwood/Documents/js-portfolio-site/img/jobs-image.png') no-repeat center/100%;
+    background: url('img/kafka-image.png') no-repeat center/100%;
+}
+
+.work-object.five:hover {
+    background: url('img/jobs-image.png') no-repeat center/100%;
+}
+
+.work-object.six:hover {
+    background: url('img/day-zero-image.png') no-repeat center/100%;
+}
+
+.work-object.seven:hover {
+    background: url('img/water-image.png') no-repeat center/100%;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    height: 90vh;
+    overflow: auto;
+    padding: 5rem;
+    background-color: var(--black);
+    color: var(--white);
+    overflow: scroll;
+}
+
+.lightbox .contact-link {
+    color: var(--selective-yellow);
+    cursor: pointer;
+}
+
+.lightbox .contact-link:hover {
+    color: var(--auburn);
+}
+
+.close {
+    position: sticky;
+    top: 3rem;
+    left: 85vw;
+    color: var(--selective-yellow);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--auburn);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page {
+    position: relative;
+    margin: auto;
+    width: 75%;
+    max-width: 100rem;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5rem;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.page p {
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+.page p:nth-of-type(2) {
+    margin-bottom: 3rem;
+}
+
+.center {
+    text-align: center;
+}
+
+h1.center {
+    font-variant: small-caps;
+    margin-top: 0;
+}
+
+p.epigraph {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    line-height: 1.3rem;
 }
 
 /* contact */
@@ -295,7 +386,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--bitter-lemon) inset !important;
+    -webkit-box-shadow: 0 0 0 30px var(--fiery-rose) inset !important;
 }
 
 input:focus-visible,
@@ -310,7 +401,7 @@ textarea:focus::placeholder {
 
 input:focus,
 textarea:focus {
-    background-color: var(--bitter-lemon);
+    background-color: var(--fiery-rose);
 }
 
 textarea {

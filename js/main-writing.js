@@ -51,7 +51,7 @@ function pauseScroll() {
     window.removeEventListener('scroll', updateFragId);
     setTimeout(() => {
         window.addEventListener('scroll', updateFragId);
-    }, 100);
+    }, 200);
 }
 window.addEventListener('load', pauseScroll);
 
@@ -77,6 +77,24 @@ function navClick() {
     }, 500);
 }
 
+// excerpt modal functions
+
+function openModal() {
+    document.getElementsByClassName('lightbox')[0].style.display = "block";
+}
+
+function closeModal() {
+    document.getElementsByClassName('lightbox')[0].style.display = "none";
+}
+
+function contact() {
+    pauseScroll()
+    document.getElementsByClassName('lightbox')[0].style.display = "none";
+    if (new URL(document.URL).hash !== '#contact') {
+        window.location.href = '#contact';
+    }
+}
+
 // date in footer
 let date = new Date();
 let year = date.getFullYear();
@@ -88,7 +106,7 @@ let captcha = new Array();
 function createCaptcha() {
     const activeCaptcha = document.getElementById("captcha");
     for (i = 0; i < 6; i++) {
-        if (q % 2 == 0) {
+        if (i % 2 == 0) {
             captcha[i] = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
         } else {
             captcha[i] = Math.floor(Math.random() * 10 + 0);
