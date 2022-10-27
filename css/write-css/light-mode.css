@@ -239,6 +239,7 @@ a .work-object {
 }
 
 .work-object.one:hover {
+    cursor: pointer;
     background: url('img/cooper-creek-image.png') no-repeat center/100%;
 }
 
