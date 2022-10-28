@@ -77,6 +77,25 @@ function navClick() {
     }, 500);
 }
 
+// fade non-hovered items
+const workObjects = document.getElementsByClassName('work-object');
+
+for (let i = 0; i < workObjects.length; i++) {
+    workObjects[i].addEventListener('mouseenter', (e) => {
+        let active = workObjects[i];
+        console.log(workObjects);
+        for (let j = 0; j < workObjects.length; j++) {
+            workObjects[j].style.opacity = '0.3';
+            active.style.opacity = '1';
+        }
+    });
+    workObjects[i].addEventListener('mouseleave', (e) => {
+        for (let j = 0; j < workObjects.length; j++) {
+            workObjects[j].style.opacity = '1';
+        }
+  });
+}
+
 // excerpt modal functions
 
 function openModal() {
@@ -85,6 +104,12 @@ function openModal() {
 
 function closeModal() {
     document.getElementsByClassName('lightbox')[0].style.display = "none";
+}
+
+function keyPress (e) {
+    if(e.key === "Escape") {
+        closeModal();
+    }
 }
 
 function contact() {
@@ -100,18 +125,17 @@ let date = new Date();
 let year = date.getFullYear();
 document.getElementsByClassName('date')[0].innerHTML = year;
 
-// captcha
-let captcha = new Array();
+// email obfuscation
+function generateAlphabet(capital = false) {
+    return [...Array(26)].map((_, i) => String.fromCharCode(i + (capital ? 65 : 97)));
+}
+const alpha = generateAlphabet();
+const user = alpha.slice(9, 10) + alpha.slice(4, 5) + alpha.slice(18, 19) + alpha.slice(18, 19) + alpha.slice(4, 5) + '.' + alpha.slice(4, 5) + '.' + alpha.slice(18, 19) + alpha.slice(7, 8) + alpha.slice(4, 5) + alpha.slice(17, 18) + alpha.slice(22, 23) + alpha.slice(14, 15) + alpha.slice(14, 15) + alpha.slice(3, 4);
+const domain = alpha.slice(6, 7) + alpha.slice(12, 13) + alpha.slice(0, 1) + alpha.slice(8, 9) + alpha.slice(11, 12) + '.' + alpha.slice(2, 3) + alpha.slice(14, 15) + alpha.slice(12, 13);
 
-function createCaptcha() {
-    const activeCaptcha = document.getElementById("captcha");
-    for (i = 0; i < 6; i++) {
-        if (i % 2 == 0) {
-            captcha[i] = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
-        } else {
-            captcha[i] = Math.floor(Math.random() * 10 + 0);
-        }
-    }
-    theCaptcha = captcha.join("");
-    activeCaptcha.innerHTML = `${theCaptcha}`;
+window.onload = function() {
+    document.contactForm.action = get_action();
+}
+function get_action() {
+    return 'mailto:' + user + '@' + domain + ' target="_blank"';
 }

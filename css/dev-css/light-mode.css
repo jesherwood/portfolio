@@ -443,7 +443,7 @@ header.closer {
 }
 
 .one-third-grid.simons {
-    background-image: url('/Users/jsherwood/Documents/js-portfolio-site/img/simons.png');
+    background-image: url('img/simons.png');
     background-repeat: no-repeat;
     background-size: cover;
 }

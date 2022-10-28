@@ -490,6 +490,9 @@ footer a:visited {
     section h1 {
         padding-top: 6rem;
     }
+    .hero-object {
+        margin-left: -45vw;
+    }
     .hero {
         left: 5%;
     }
@@ -504,11 +507,51 @@ footer a:visited {
     }
 }
 
-@media only screen and (max-width: 448px) {
+@media only screen and (max-width: 600px) {
+    .work-container {
+        justify-content: center;
+    }
+    .work-object {
+        width: 50vw;
+        margin-bottom: 10vh;
+    }
     .work-object h2 {
         width: 30vh;
     }
-}
+    .work-object p.descrip {
+      display: inline-block;
+      width: 58vw;
+    }
+
+    .work-object.one {
+        cursor: pointer;
+        background: url('img/cooper-creek-image.png') no-repeat center/100%;
+    }
+
+    .work-object.two {
+        background: url('img/WWNN-image.png') no-repeat center/100%;
+    }
+
+    .work-object.three {
+        background: url('img/families-image-light.png') no-repeat center/100%;
+    }
+
+    .work-object.four {
+        background: url('img/kafka-image.png') no-repeat center/100%;
+    }
+
+    .work-object.five {
+        background: url('img/jobs-image.png') no-repeat center/100%;
+    }
+
+    .work-object.six {
+        background: url('img/day-zero-image.png') no-repeat center/100%;
+    }
+
+    .work-object.seven {
+        background: url('img/water-image.png') no-repeat center/100%;
+    }
+  }
 
 /* ANIMATIONS */
 @keyframes fadein {
