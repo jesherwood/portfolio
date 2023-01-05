@@ -1,0 +1,62 @@
+/* nav styles */
+.dark .light-mode-text {
+    display: block;
+    color: rgba(var(--background-color), 1);
+}
+
+.dark .dark-mode-text {
+    display: none;
+}
+
+.dark header p {
+    background-color: rgba(var(--color), 1);
+    border-radius: 5px;
+}
+
+/* home styles */
+.dark .home-about {
+    background-color: rgba(var(--black), 1);
+    color: rgba(var(--white), 1);
+}
+
+/* work styles */
+.dark section#work {
+    background-color: rgba(var(--phthalo-green), 1);
+}
+
+.dark .work-object p.descrip {
+    background-color: rgba(var(--phthalo-green), 0.8);
+}
+
+.dark .work-object:hover {
+    transform: scale(1.3);
+    color: rgba(var(--verdigris), 1);
+    border-color: rgba(var(--verdigris), 1);
+}
+
+.dark .work-object span {
+    color: rgba(var(--verdigris), 1);
+    opacity: 0.5;
+}
+
+.dark .work-object:hover span {
+    color: rgba(var(--copper-penny), 1);
+}
+
+/* contact styles */
+.dark section#contact {
+    background-color: rgba(var(--dark-sienna), 1);
+}
+
+.dark .container {
+    background-color: rgba(var(--dark-sienna), 1);
+}
+
+.dark input[type=submit] {
+    background-color: rgba(var(--yellow-green-crayola), 1);
+}
+
+/* footer styles */
+.dark footer {
+    background-color: rgba(var(--dark-sienna), 1);
+}

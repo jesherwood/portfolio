@@ -1,3 +1,14 @@
+// dark mode switch
+const mainBody = document.getElementsByTagName('body')[0];
+
+function toggleMode() {
+    mainBody.classList.toggle('dark');
+    document.documentElement.style.setProperty('--color', '255, 255, 255');
+    if (!mainBody.classList.contains('dark')) {
+        document.documentElement.style.setProperty('--color', '0, 0, 0');
+    }
+}
+
 // remove resize
 const delayGrow = 300;
 const delayFade = 2300;
@@ -24,20 +35,37 @@ function updateFragId() {
         let id = sections[i].id;
         let rect = sections[i].getBoundingClientRect().y;
         let pageData = {id:id, rect:rect};
+        let darkMode = document.body.classList.contains('dark');
         if (pageData.rect > -100 && pageData.rect < 100) {
             if (pageData.id !== location.hash) {
                 fragmentId = pageData.id;
                 window.location.hash = fragmentId;
                 if (new URL(document.URL).hash === '#work') {
-                    document.documentElement.style.setProperty('--color', 'rgb(165, 36, 34)');
+                    document.documentElement.style.setProperty('--color', '165, 36, 34');
+                    document.documentElement.style.setProperty('--background-color', '43, 45, 66');
                     let workItems = document.getElementsByClassName('work-object');
                     for (j = 0; j < workItems.length; j++) {
                         workItems[j].style.animation = 'flowfromtop 1s';
                     }
+                    if (darkMode) {
+                        document.documentElement.style.setProperty('--color', '178, 103, 94');
+                        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+                    }
                 } else if (new URL(document.URL).hash === '#contact') {
-                    document.documentElement.style.setProperty('--color', 'rgb(0, 110, 144)');
-                } else {
-                    document.documentElement.style.setProperty('--color', 'rgb(0, 0, 0)');
+                    document.documentElement.style.setProperty('--color', '0, 110, 144');
+                    document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+                    if (darkMode) {
+                        document.documentElement.style.setProperty('--color', '187, 214, 134');
+                        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+                    }
+                } else if ((new URL(document.URL).hash === '')) {
+                    document.documentElement.style.setProperty('--color', '0, 0, 0');
+                    document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+                    console.log('Ahem');
+                    if (darkMode) {
+                        document.documentElement.style.setProperty('--color', '255, 255, 255');
+                        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+                    }
                 }
             }
         }
@@ -63,13 +91,26 @@ function navClick() {
     window.removeEventListener('scroll', updateFragId);
 
     navItem[0].addEventListener('click', (colorChange) => {
-        document.documentElement.style.setProperty('--color', 'rgb(0, 0, 0)');
+        document.documentElement.style.setProperty('--color', '0, 0, 0');
+        if (darkMode) {
+            document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+        }
     });
     navItem[1].addEventListener('click', (colorChange) => {
-        document.documentElement.style.setProperty('--color', 'rgb(165, 36, 34)');
+        document.documentElement.style.setProperty('--color', '165, 36, 34');
+        document.documentElement.style.setProperty('--background-color', '43, 45, 66');
+        if (darkMode) {
+            document.documentElement.style.setProperty('--color', '178, 103, 94');
+            document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+        }
     });
     navItem[2].addEventListener('click', (colorChange) => {
-        document.documentElement.style.setProperty('--color', 'rgb(0, 110, 144)');
+        document.documentElement.style.setProperty('--color', '0, 110, 144');
+        document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+        if (darkMode) {
+            document.documentElement.style.setProperty('--color', '187, 214, 134');
+            document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+        }
     });
 
     setTimeout(() => {
