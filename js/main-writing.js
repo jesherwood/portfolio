@@ -220,10 +220,20 @@ function timer() {
     }
 }
 
+//remove button and put in email
+let email = document.getElementsByClassName('contact-email')[0];
+
 function doSomething(e) {
-    let email = document.getElementsByClassName('contact-email')[0];
     console.log("pressHold event fired!");
     email.style.display = 'block';
     email.innerHTML += '&#106;&#101;&#115;&#115;&#101;&#032;[&#100;&#111;&#116;]&#032;&#101;&#032;[&#100;&#111;&#116;]&#032;&#115;&#104;&#101;&#114;&#119;&#111;&#111;&#100;&#032;[&#097;&#116;]&#032;&#103;&#109;&#097;&#105;&#108;&#032;[&#100;&#111;&#116;]&#032;&#099;&#111;&#109;';
     item.style.display = 'none';
+    if (window.getComputedStyle(email, null).display === 'block') {
+        function removeEmail(el) {
+            email.innerHTML = '';
+            email.style.display = 'none';
+            item.style.display = 'block';
+        }
+        setTimeout(removeEmail, 20000);
+    }
 }
