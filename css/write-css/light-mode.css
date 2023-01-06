@@ -14,9 +14,9 @@ html {
     --blue-sapphire: 0, 110, 144;
     --aqua: 61, 250, 255;
     --bitter-lemon: 194, 232, 18;
-    --space-cadet: 43, 45, 66;
+    --marigold: 240, 162, 2;
     --platinum: 169, 178, 172;
-    --selective-yellow: 255, 186, 8;
+    --oxford-blue: 10, 18, 42;
     --fiery-rose: 252, 100, 113;
     --copper-penny: 178, 103, 94;
     --phthalo-green: 22, 48, 43;
@@ -106,7 +106,7 @@ header p:hover {
 }
 
 .dark-mode-text {
-    color: rgba(var(--white), 1);
+    color: rgba(var(--background-color), 1);
     background-color: rgba(var(--color), 1);
 }
 
@@ -153,7 +153,6 @@ section h1 {
 
 .hero-object {
     margin: auto;
-    margin-top: 5vh;
     width: 50rem;
     height: 50rem;
     border-radius: 100%;
@@ -200,7 +199,7 @@ section h1 {
 /* work */
 
 section#work {
-    background-color: rgba(var(--space-cadet), 1);
+    background-color: rgba(var(--marigold), 1);
 }
 
 .work-container {
@@ -229,12 +228,12 @@ section#work {
 
 .work-object:hover {
     transform: scale(1.3);
-    color: rgba(var(--selective-yellow), 1);
-    border-color: rgba(var(--selective-yellow), 1);
+    color: rgba(var(--oxford-blue), 1);
+    border-color: rgba(var(--oxford-blue), 1);
 }
 
 .work-object span {
-    color: rgba(var(--selective-yellow), 1);
+    color: rgba(var(--oxford-blue), 1);
     opacity: 0.5;
 }
 
@@ -257,7 +256,7 @@ a .work-object {
     padding-right: 2rem;
     direction: ltr;
     font-size: 0.9rem;
-    background-color: rgba(43, 45, 66, 0.8);
+    background-color: rgba(240, 162, 2, 0.8);
 }
 
 .work-object:hover p.descrip {
@@ -303,12 +302,12 @@ a .work-object {
     overflow: auto;
     padding: 5rem;
     background-color: rgba(var(--black), 1);
-    color: var(--white);
+    color: rgba(var(--white), 1);
     overflow: scroll;
 }
 
 .lightbox .contact-link {
-    color: rgba(var(--selective-yellow), 1);
+    color: rgba(var(--marigold), 1);
     cursor: pointer;
 }
 
@@ -320,7 +319,7 @@ a .work-object {
     position: sticky;
     top: 3rem;
     left: 85vw;
-    color: rgba(var(--selective-yellow), 1);
+    color: rgba(var(--marigold), 1);
     font-size: 2rem;
     font-weight: bold;
 }
@@ -381,64 +380,31 @@ section#contact h1 {
     text-align: center;
 }
 
-label {
-    font-size: 2rem;
-}
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid rgba(var(--platinum), 1);
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-input[type=submit] {
-    background-color: rgba(var(--blue-sapphire), 1);
-    color: white;
-    padding: 1rem 2rem;
+.contact-button {
+    display: block;
+    width: 18rem;
+    margin: auto;
+    margin-top: 6%;
+    border-radius: 100%;
     border: none;
-    border-radius: 4px;
+    padding: 6.5rem 0;
+    background-color: rgba(var(--blue-sapphire), 1);
+    color: rgba(var(--platinum), 1);
     cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: rgba(var(--blue-sapphire), 1);
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px rgba(var(--fiery-rose), 1) inset !important;
-}
-
-input:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid rgba(var(--blue-sapphire), 1);
-}
-
-input:focus::placeholder,
-textarea:focus::placeholder {
-    color: transparent;
-}
-
-input:focus,
-textarea:focus {
+.contact-button:active {
     background-color: rgba(var(--fiery-rose), 1);
+    color: rgba(var(--blue-sapphire), 1);
+    transition: all 5s ease-out;
 }
 
-textarea {
-    height: 10rem;
-}
-
-.container {
-    border-radius: 5px;
-    background-color: rgba(var(--platinum), 1);
-    padding: 20px;
+.contact-email {
+    display: none;
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+    user-select: none;
 }
 
 /* footer */

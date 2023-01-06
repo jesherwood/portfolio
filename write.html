@@ -14,6 +14,7 @@
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="css/write-css/img/circle-icon.ico">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
@@ -210,16 +211,11 @@
             <div>
                 <h1>contact</h1>
             </div>
-            <button id="item">
-                <p>press and hold to prove you're a human being</p>
+            <button class="contact-button">
+                <p>press and hold</p>
+                <p>to prove you're a human being</p>
             </button>
-            <div class="container">
-                <form name="contactForm" enctype="text/plain">
-                    <label for="subject">message</label>
-                    <textarea id="message" name="message" placeholder="write something. . ." pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"></textarea>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+            <h2 class="contact-email"></h2>
         </section>
         <footer>
             <div>&copy; jesse sherwood <span class="date"></span></div>
