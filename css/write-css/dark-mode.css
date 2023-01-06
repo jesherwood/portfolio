@@ -14,7 +14,7 @@
 }
 
 /* home styles */
-.dark .home-about {
+.dark.home-about {
     background-color: rgba(var(--black), 1);
     color: rgba(var(--white), 1);
 }
@@ -34,6 +34,10 @@
     border-color: rgba(var(--verdigris), 1);
 }
 
+.dark .work-object:hover a {
+    color: rgba(var(--verdigris), 1);
+}
+
 .dark .work-object span {
     color: rgba(var(--verdigris), 1);
     opacity: 0.5;
@@ -48,12 +52,15 @@
     background-color: rgba(var(--dark-sienna), 1);
 }
 
-.dark .container {
-    background-color: rgba(var(--dark-sienna), 1);
+.dark .contact-button {
+    background-color: rgba(var(--yellow-green-crayola), 1);
+    color: rgba(var(--dark-sienna), 1);
 }
 
-.dark input[type=submit] {
-    background-color: rgba(var(--yellow-green-crayola), 1);
+.dark .contact-button:active {
+    background-color: rgba(var(--sinopia), 1);
+    color: rgba(var(--yellow-green-crayola), 1);
+    transition: all 5s ease-out;
 }
 
 /* footer styles */

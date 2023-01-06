@@ -22,6 +22,7 @@ html {
     --phthalo-green: 22, 48, 43;
     --dark-sienna: 40, 0, 4;
     --yellow-green-crayola: 187, 214, 134;
+    --sinopia: 199, 62, 29;
     --verdigris: 76, 181, 174;
     --color: 0, 0, 0;
     --background-color: ;
@@ -245,7 +246,7 @@ section#work {
     margin-top: 0.2rem;
 }
 
-a .work-object {
+.work-object a {
     color: rgba(var(--color), 1);
 }
 
@@ -261,6 +262,10 @@ a .work-object {
 
 .work-object:hover p.descrip {
     display: inline-block;
+}
+
+.work-object:hover a {
+    color: rgba(var(--oxford-blue), 1);
 }
 
 .work-object.one:hover {
@@ -292,15 +297,18 @@ a .work-object {
     background: url('img/water-image.png') no-repeat center/100%;
 }
 
+/* lightbox reader css */
+
 .lightbox {
     display: none;
     position: fixed;
     z-index: 999;
     left: 0;
     top: 0;
-    height: 90vh;
+    height: 99vh;
     overflow: auto;
-    padding: 5rem;
+    padding: 3%;
+    padding-top: 0;
     background-color: rgba(var(--black), 1);
     color: rgba(var(--white), 1);
     overflow: scroll;
@@ -317,11 +325,12 @@ a .work-object {
 
 .close {
     position: sticky;
-    top: 3rem;
+    top: 6rem;
     left: 85vw;
     color: rgba(var(--marigold), 1);
     font-size: 2rem;
     font-weight: bold;
+    z-index: 10;
 }
 
 .close:hover,
@@ -468,7 +477,7 @@ footer a:visited {
     }
 }
 
-@media only screen and (max-width: 821px) {
+@media only screen and (max-width: 820px) {
     section h1 {
         padding-top: 6rem;
     }
@@ -485,9 +494,46 @@ footer a:visited {
     .work-object h2 {
         width: inherit;
     }
+
+    .work-object:focus p.descrip {
+        display: inline-block;
+    }
+
+    .work-object.one:focus {
+        cursor: pointer;
+        background: url('img/cooper-creek-image.png') no-repeat center/100%;
+    }
+
+    .work-object.two:focus {
+        background: url('img/WWNN-image.png') no-repeat center/100%;
+    }
+
+    .work-object.three:focus {
+        background: url('img/families-image-light.png') no-repeat center/100%;
+    }
+
+    .work-object.four:focus {
+        background: url('img/kafka-image.png') no-repeat center/100%;
+    }
+
+    .work-object.five:focus {
+        background: url('img/jobs-image.png') no-repeat center/100%;
+    }
+
+    .work-object.six:focus {
+        background: url('img/day-zero-image.png') no-repeat center/100%;
+    }
+
+    .work-object.seven:focus {
+        background: url('img/water-image.png') no-repeat center/100%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
+    section#work {
+        padding-right: 0;
+    }
+
     .work-container {
         justify-content: center;
     }
@@ -531,6 +577,25 @@ footer a:visited {
 
     .work-object.seven {
         background: url('img/water-image.png') no-repeat center/100%;
+    }
+
+    .lightbox {
+        padding: 0;
+        height: 100vh;
+    }
+
+    .page {
+        width: 85%;
+        padding: 2rem;
+        padding-top: 0;
+    }
+
+    .page p {
+      font-size: 0.9rem;
+    }
+
+    .close {
+        left: 90vw;
     }
   }
 

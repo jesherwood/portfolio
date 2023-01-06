@@ -1,12 +1,10 @@
 // dark mode switch
 const mainBody = document.getElementsByTagName('body')[0];
+let darkMode = document.body.classList.contains('dark');
+let lightMode = !darkMode;
 
 function toggleMode() {
     mainBody.classList.toggle('dark');
-    document.documentElement.style.setProperty('--color', '255, 255, 255');
-    if (!mainBody.classList.contains('dark')) {
-        document.documentElement.style.setProperty('--color', '0, 0, 0');
-    }
 }
 
 // remove resize
@@ -54,10 +52,9 @@ function updateFragId() {
                         document.documentElement.style.setProperty('--color', '187, 214, 134');
                         document.documentElement.style.setProperty('--background-color', '40, 0, 4');
                     }
-                } else if ((new URL(document.URL).hash === '')) {
+                } else {
                     document.documentElement.style.setProperty('--color', '0, 0, 0');
                     document.documentElement.style.setProperty('--background-color', '255, 255, 255');
-                    console.log('Ahem');
                     if (darkMode) {
                         document.documentElement.style.setProperty('--color', '255, 255, 255');
                         document.documentElement.style.setProperty('--background-color', '0, 0, 0');
