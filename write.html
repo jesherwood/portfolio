@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Jesse Sherwood</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,11 +14,13 @@
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="css/write-css/img/circle-icon.ico">
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/write-css/light-mode.css">
+    <link rel="stylesheet" href="css/write-css/dark-mode.css">
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -31,6 +33,8 @@
                 <a href="#work"><li class="nav-item" onclick="navClick()">work</li></a>
                 <a href="#contact"><li class="nav-item" onclick="navClick()">contact</li></a>
             </ul>
+            <p class="dark-mode-text" onclick="toggleMode()">night mode</p>
+            <p class="light-mode-text" onclick="toggleMode()">day mode</p>
         </nav>
     </header>
     <div class="section-container">
@@ -46,13 +50,13 @@
         <section id="work">
             <h1>work</h1>
             <div class="work-container">
-                <div class="work-object one" onclick="openModal()">
-                    <h3>Cooper Creek</h3>
+                <div class="work-object one">
+                    <h3 onclick="openModal()">Cooper Creek</h3>
                     <p>Novel</p>
-                    <p class="descrip">Why are all the young people dying? Billie Dudek wants to know. The octogenarian begins taking notice of these deaths when a girl that went to grade school with her granddaughter is killed in a car accident.</p>
+                    <p class="descrip" onclick="openModal()">Why are all the young people dying? Billie Dudek wants to know. The octogenarian begins taking notice of these deaths when a girl that went to grade school with her granddaughter is killed in a car accident.</p>
                 </div>
-                <div class="lightbox">
-                    <span class="close" onclick="closeModal()">&#x2715</span>
+                <div class="lightbox" onclick="closeModal()">
+                    <span class="close">&#x2715</span>
                     <div class="page">
                         <h1 class="center">cooper creek</h1>
                         <p class="center">by</p>
@@ -162,37 +166,33 @@
                         <p>&copy; jesse sherwood <span class="date"></span></p>
                     </div>
                 </div>
-                <a href="https://writers.coverfly.com/projects/view/6ecc63b1-0aea-4b3a-b19f-262df75c41b5/The_Woman_With_No_Name" target="_blank">
-                    <div class="work-object two">
-                        <h3>The Woman With No Name</h3>
-                        <p>Screenplay</p>
-                        <p class="descrip">Violence and mayhem ensue after a nameless drifter finds herself facing off against three drug-smuggling brothers whose strip club dominates an oil boomtown turned bust-town in North Dakota.</p>
-                    </div>
+                <div class="work-object two">
+                    <h3><a href="https://writers.coverfly.com/projects/view/6ecc63b1-0aea-4b3a-b19f-262df75c41b5/The_Woman_With_No_Name" target="_blank">The Woman With No Name</a></h3>
+                    <p>Screenplay</p>
+                    <p class="descrip"><a href="https://writers.coverfly.com/projects/view/6ecc63b1-0aea-4b3a-b19f-262df75c41b5/The_Woman_With_No_Name" target="_blank">Violence and mayhem ensue after a nameless drifter finds herself facing off against three drug-smuggling brothers whose strip club dominates an oil boomtown turned bust-town in North Dakota.</a></p>
+                </div>
                 </a>
-                <a href="https://www.saturdayeveningpost.com/2020/01/all-happy-families/" target="_blank">
-                    <div class="work-object three">
-                        <h3>All Happy Families</h3>
-                        <p>Short Story</p>
-                        <p class="descrip">He would never sit around waiting for someone to die, but his three daughters find themselves doing just that, waiting at his deathbed, trying to make sense of his past and their future.</p>
-                    </div>
+                <div class="work-object three">
+                    <h3><a href="https://www.saturdayeveningpost.com/2020/01/all-happy-families/" target="_blank">All Happy Families</a></h3>
+                    <p>Short Story</p>
+                    <p class="descrip"><a href="https://www.saturdayeveningpost.com/2020/01/all-happy-families/" target="_blank">He would never sit around waiting for someone to die, but his three daughters find themselves doing just that, waiting at his deathbed, trying to make sense of his past and their future.</a></p>
+                </div>
                 </a>
-                <a href="https://www.guernicamag.com/kafkas-selfies/" target="_blank">
-                    <div class="work-object four">
-                        <h3>Kafka's Selfies</h3>
-                        <p>Essay</p>
-                        <p class="descrip">A new collection highlights Kafka's Kardashian-esque self-reflection.</p>
-                    </div>
+                <div class="work-object four">
+                    <h3><a href="https://www.guernicamag.com/kafkas-selfies/" target="_blank">Kafka's Selfies</a></h3>
+                    <p>Essay</p>
+                    <p class="descrip"><a href="https://www.guernicamag.com/kafkas-selfies/" target="_blank">A new collection highlights Kafka's Kardashian-esque self-reflection.</a></p>
+                </div>
                 </a>
-                <a href="https://www.mcsweeneys.net/articles/translations-of-common-job-descriptions" target="_blank">
-                    <div class="work-object five">
-                        <h3>Translations of Common Job Descriptions</h3>
-                        <p>Humor</p>
-                        <p class="descrip">“Minimum of 2 years of experience in a similar role”
-                          Ideally, you will have at least 45 years’ experience in this exact role. Though, we do want you to be fresh, hip, innovative.</p>
-                    </div>
+                <div class="work-object five">
+                    <h3><a href="https://www.mcsweeneys.net/articles/translations-of-common-job-descriptions" target="_blank">Translations of Common Job Descriptions</a></h3>
+                    <p>Humor</p>
+                    <p class="descrip"><a href="https://www.mcsweeneys.net/articles/translations-of-common-job-descriptions" target="_blank">“Minimum of 2 years of experience in a similar role”
+                      Ideally, you will have at least 45 years’ experience in this exact role. Though, we do want you to be fresh, hip, innovative.</a></p>
+                </div>
                 </a>
                 <div class="work-object six">
-                      <h3>DAY ZERO <span>(in progress)</span></h3>
+                      <h3>Zero-Day <span>(in progress)</span></h3>
                       <p>Novel</p>
                       <p class="descrip">Moby-Dick meets the apocalypse, in the woods.</p>
                 </div>
@@ -207,13 +207,11 @@
             <div>
                 <h1>contact</h1>
             </div>
-            <div class="container">
-                <form name="contactForm" enctype="text/plain">
-                    <label for="subject">message</label>
-                    <textarea id="message" name="message" placeholder="write something. . ." pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"></textarea>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+            <button class="contact-button">
+                <p>press and hold</p>
+                <p>to prove you're a human being</p>
+            </button>
+            <h2 class="contact-email"></h2>
         </section>
         <footer>
             <div>&copy; jesse sherwood <span class="date"></span></div>
@@ -224,12 +222,5 @@
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main-writing.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 </html>

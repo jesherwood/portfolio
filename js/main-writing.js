@@ -1,3 +1,12 @@
+// dark mode switch
+const mainBody = document.getElementsByTagName('body')[0];
+let darkMode = document.body.classList.contains('dark');
+let lightMode = !darkMode;
+
+function toggleMode() {
+    mainBody.classList.toggle('dark');
+}
+
 // remove resize
 const delayGrow = 300;
 const delayFade = 2300;
@@ -24,20 +33,32 @@ function updateFragId() {
         let id = sections[i].id;
         let rect = sections[i].getBoundingClientRect().y;
         let pageData = {id:id, rect:rect};
+        let darkMode = document.body.classList.contains('dark');
         if (pageData.rect > -100 && pageData.rect < 100) {
             if (pageData.id !== location.hash) {
                 fragmentId = pageData.id;
                 window.location.hash = fragmentId;
                 if (new URL(document.URL).hash === '#work') {
-                    document.documentElement.style.setProperty('--color', 'rgb(165, 36, 34)');
-                    let workItems = document.getElementsByClassName('work-object');
-                    for (j = 0; j < workItems.length; j++) {
-                        workItems[j].style.animation = 'flowfromtop 1s';
+                    document.documentElement.style.setProperty('--color', '165, 36, 34');
+                    document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+                    if (darkMode) {
+                        document.documentElement.style.setProperty('--color', '178, 103, 94');
+                        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
                     }
                 } else if (new URL(document.URL).hash === '#contact') {
-                    document.documentElement.style.setProperty('--color', 'rgb(0, 110, 144)');
+                    document.documentElement.style.setProperty('--color', '0, 110, 144');
+                    document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+                    if (darkMode) {
+                        document.documentElement.style.setProperty('--color', '187, 214, 134');
+                        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+                    }
                 } else {
-                    document.documentElement.style.setProperty('--color', 'rgb(0, 0, 0)');
+                    document.documentElement.style.setProperty('--color', '0, 0, 0');
+                    document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+                    if (darkMode) {
+                        document.documentElement.style.setProperty('--color', '255, 255, 255');
+                        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+                    }
                 }
             }
         }
@@ -63,13 +84,26 @@ function navClick() {
     window.removeEventListener('scroll', updateFragId);
 
     navItem[0].addEventListener('click', (colorChange) => {
-        document.documentElement.style.setProperty('--color', 'rgb(0, 0, 0)');
+        document.documentElement.style.setProperty('--color', '0, 0, 0');
+        if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+        }
     });
     navItem[1].addEventListener('click', (colorChange) => {
-        document.documentElement.style.setProperty('--color', 'rgb(165, 36, 34)');
+        document.documentElement.style.setProperty('--color', '165, 36, 34');
+        document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+        if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--color', '178, 103, 94');
+            document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+        }
     });
     navItem[2].addEventListener('click', (colorChange) => {
-        document.documentElement.style.setProperty('--color', 'rgb(0, 110, 144)');
+        document.documentElement.style.setProperty('--color', '0, 110, 144');
+        document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+        if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--color', '187, 214, 134');
+            document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+        }
     });
 
     setTimeout(() => {
@@ -125,17 +159,78 @@ let date = new Date();
 let year = date.getFullYear();
 document.getElementsByClassName('date')[0].innerHTML = year;
 
-// email obfuscation
-function generateAlphabet(capital = false) {
-    return [...Array(26)].map((_, i) => String.fromCharCode(i + (capital ? 65 : 97)));
-}
-const alpha = generateAlphabet();
-const user = alpha.slice(9, 10) + alpha.slice(4, 5) + alpha.slice(18, 19) + alpha.slice(18, 19) + alpha.slice(4, 5) + '.' + alpha.slice(4, 5) + '.' + alpha.slice(18, 19) + alpha.slice(7, 8) + alpha.slice(4, 5) + alpha.slice(17, 18) + alpha.slice(22, 23) + alpha.slice(14, 15) + alpha.slice(14, 15) + alpha.slice(3, 4);
-const domain = alpha.slice(6, 7) + alpha.slice(12, 13) + alpha.slice(0, 1) + alpha.slice(8, 9) + alpha.slice(11, 12) + '.' + alpha.slice(2, 3) + alpha.slice(14, 15) + alpha.slice(12, 13);
+// press and hold verification
 
-window.onload = function() {
-    document.contactForm.action = get_action();
+// The item (or items) to press and hold on
+let item = document.getElementsByClassName('contact-button')[0];
+
+let timerID;
+let counter = 0;
+
+let pressHoldEvent = new CustomEvent("pressHold");
+
+// Increase or decreae value to adjust how long
+// one should keep pressing down before the pressHold
+// event fires
+let pressHoldDuration = 120;
+
+// Listening for the mouse and touch events
+item.addEventListener("mousedown", pressingDown, false);
+item.addEventListener("mouseup", notPressingDown, false);
+item.addEventListener("mouseleave", notPressingDown, false);
+
+item.addEventListener("touchstart", pressingDown, {passive: true});
+item.addEventListener("touchend", notPressingDown, false);
+
+// Listening for our custom pressHold event
+item.addEventListener("pressHold", doSomething, false);
+
+function pressingDown(e) {
+    // Start the timer
+    requestAnimationFrame(timer);
+
+    e.preventDefault();
+
+    console.log("Pressing!");
 }
-function get_action() {
-    return 'mailto:' + user + '@' + domain + ' target="_blank"';
+
+function notPressingDown(e) {
+    // Stop the timer
+    cancelAnimationFrame(timerID);
+    counter = 0;
+
+    console.log("Not pressing!");
+}
+
+//
+// Runs at 60fps when you are pressing down
+//
+function timer() {
+    console.log("Timer tick!");
+
+    if (counter < pressHoldDuration) {
+        timerID = requestAnimationFrame(timer);
+        counter++;
+    } else {
+        console.log("Press threshold reached!");
+        item.dispatchEvent(pressHoldEvent);
+    }
+}
+
+//remove button and put in email
+let email = document.getElementsByClassName('contact-email')[0];
+
+function doSomething(e) {
+    console.log("pressHold event fired!");
+    email.style.display = 'block';
+    email.innerHTML += '&#106;&#101;&#115;&#115;&#101;&#032;[&#100;&#111;&#116;]&#032;&#101;&#032;[&#100;&#111;&#116;]&#032;&#115;&#104;&#101;&#114;&#119;&#111;&#111;&#100;&#032;[&#097;&#116;]&#032;&#103;&#109;&#097;&#105;&#108;&#032;[&#100;&#111;&#116;]&#032;&#099;&#111;&#109;';
+    item.style.display = 'none';
+    if (window.getComputedStyle(email, null).display === 'block') {
+        function removeEmail(el) {
+            email.innerHTML = '';
+            email.style.display = 'none';
+            item.style.display = 'block';
+        }
+        setTimeout(removeEmail, 20000);
+    }
 }
