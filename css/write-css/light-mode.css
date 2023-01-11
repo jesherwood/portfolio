@@ -269,8 +269,11 @@ section#work {
 }
 
 .work-object.one:hover {
-    cursor: pointer;
     background: url('img/cooper-creek-image.png') no-repeat center/100%;
+}
+
+.work-object.one h3:hover, .descrip:hover {
+    cursor: pointer;
 }
 
 .work-object.two:hover {
@@ -500,7 +503,6 @@ footer a:visited {
     }
 
     .work-object.one:focus {
-        cursor: pointer;
         background: url('img/cooper-creek-image.png') no-repeat center/100%;
     }
 
@@ -551,7 +553,6 @@ footer a:visited {
     }
 
     .work-object.one {
-        cursor: pointer;
         background: url('img/cooper-creek-image.png') no-repeat center/100%;
     }
 

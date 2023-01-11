@@ -154,8 +154,6 @@ function contact() {
     }
 }
 
-
-
 // date in footer
 let date = new Date();
 let year = date.getFullYear();
@@ -219,7 +217,7 @@ function timer() {
     }
 }
 
-//remove button and put in email
+//remove button and put in link to email
 let email = document.getElementsByClassName('contact-email')[0];
 
 function doSomething(e) {
