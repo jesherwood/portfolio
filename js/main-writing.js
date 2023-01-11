@@ -154,6 +154,8 @@ function contact() {
     }
 }
 
+
+
 // date in footer
 let date = new Date();
 let year = date.getFullYear();
@@ -222,8 +224,9 @@ let email = document.getElementsByClassName('contact-email')[0];
 
 function doSomething(e) {
     console.log("pressHold event fired!");
+    emailText = 'amVzc2UuZS5zaGVyd29vZEBnbWFpbC5jb20=';
     email.style.display = 'block';
-    email.innerHTML += '&#106;&#101;&#115;&#115;&#101;&#032;[&#100;&#111;&#116;]&#032;&#101;&#032;[&#100;&#111;&#116;]&#032;&#115;&#104;&#101;&#114;&#119;&#111;&#111;&#100;&#032;[&#097;&#116;]&#032;&#103;&#109;&#097;&#105;&#108;&#032;[&#100;&#111;&#116;]&#032;&#099;&#111;&#109;';
+    email.innerHTML += '<a href="mailto:' + atob(emailText) + '" target="_blank"> click here to email me</a>';
     item.style.display = 'none';
     if (window.getComputedStyle(email, null).display === 'block') {
         function removeEmail(el) {
@@ -231,6 +234,6 @@ function doSomething(e) {
             email.style.display = 'none';
             item.style.display = 'block';
         }
-        setTimeout(removeEmail, 20000);
+        setTimeout(removeEmail, 3000);
     }
 }
