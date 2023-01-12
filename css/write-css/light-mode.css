@@ -56,7 +56,14 @@ h1 {
 /* header */
 
 nav {
-    background-color: rgba(var(--background-color), 1);
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(var(--background-color), 0.0),
+            rgba(var(--background-color), 1) 2%,
+            rgba(var(--background-color), 1) 98%,
+            rgba(var(--background-color), 0.0)
+        );
     position: fixed;
     top: 0;
     margin-left: 10%;
@@ -113,6 +120,8 @@ header p:hover {
 
 .light-mode-text {
     display: none;
+    color: rgba(var(--color), 1);
+    background-color: rgba(var(--background-color), 1);
 }
 
 /* all sections */
@@ -138,7 +147,7 @@ section h1 {
 }
 
 .home-about {
-    background-color: rgba(var(--white), 1);
+    background-color: rgba(var(--background-color), 1);
 }
 
 .home-about h2 {
@@ -434,7 +443,14 @@ footer {
     width: 80%;
     bottom: 0;
     padding: 0.5rem;
-    background-color: rgba(var(--background-color), 1);
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(var(--background-color), 0.0),
+            rgba(var(--background-color), 1) 5%,
+            rgba(var(--background-color), 1) 95%,
+            rgba(var(--background-color), 0.0)
+        );
     font-size: 0.9rem;
     border-top: 1px solid rgba(var(--color), 1);
     z-index: 10;
