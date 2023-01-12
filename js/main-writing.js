@@ -1,19 +1,25 @@
+// *** dark mode stuff
 // dark mode switch
 const mainBody = document.getElementsByTagName('body')[0];
 let darkMode = document.body.classList.contains('dark');
-let lightMode = !darkMode;
 
 function toggleMode() {
     mainBody.classList.toggle('dark');
+    if ((new URL(document.URL).hash === '#home') || !window.location.hash) {
+        document.documentElement.style.setProperty('--color', '0, 0, 0');
+        document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+    }
+    if (document.body.classList.contains('dark')) {
+        document.documentElement.style.setProperty('--color', '255, 255, 255');
+        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+    }
 }
 
 //dark mode switch after dark
 let now = new Date;
 let hour = now.getHours();
 
-console.log(now, hour);
-
-if (hour < 7) {
+if (hour < 7 || hour > 20) {
     mainBody.classList.toggle('dark');
 } else {
     if (darkMode) {
@@ -37,9 +43,19 @@ window.addEventListener('load', (growContent) => {
     }, delayFade);
 });
 
+// *** scrolling/navigation w/ color change stuff ***
+// navigation on click
+const sections = document.querySelectorAll("section[id]");
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+  let scrollY = window.pageYOffset;
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+  });
+}
 // change section hash & color on scroll
 
-const sections = document.getElementsByTagName('section');
 let len = sections.length;
 
 function updateFragId() {
@@ -86,7 +102,7 @@ function pauseScroll() {
     window.removeEventListener('scroll', updateFragId);
     setTimeout(() => {
         window.addEventListener('scroll', updateFragId);
-    }, 200);
+    }, 500);
 }
 window.addEventListener('load', pauseScroll);
 
@@ -99,7 +115,9 @@ function navClick() {
 
     navItem[0].addEventListener('click', (colorChange) => {
         document.documentElement.style.setProperty('--color', '0, 0, 0');
+        document.documentElement.style.setProperty('--background-color', '255, 255, 255');
         if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--color', '255, 255, 255');
             document.documentElement.style.setProperty('--background-color', '0, 0, 0');
         }
     });
@@ -186,7 +204,7 @@ let pressHoldEvent = new CustomEvent("pressHold");
 // Increase or decreae value to adjust how long
 // one should keep pressing down before the pressHold
 // event fires
-let pressHoldDuration = 120;
+let pressHoldDuration = 200;
 
 // Listening for the mouse and touch events
 item.addEventListener("mousedown", pressingDown, false);

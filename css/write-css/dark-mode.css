@@ -14,6 +14,16 @@
 }
 
 /* home styles */
+
+
+/*
+
+TO DO: FINISH/FIX THE DARK MODE TRANSITIONS - THEN GOOD TO PUT LIVE???
+NEED NEW AUTHOR PHOTO
+
+*/
+
+
 .dark.home-about {
     background-color: rgba(var(--black), 1);
     color: rgba(var(--white), 1);
@@ -64,6 +74,6 @@
 }
 
 /* footer styles */
-.dark footer {
+/* .dark footer {
     background-color: rgba(var(--dark-sienna), 1);
-}
+} */
