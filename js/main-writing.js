@@ -7,6 +7,20 @@ function toggleMode() {
     mainBody.classList.toggle('dark');
 }
 
+//dark mode switch after dark
+let now = new Date;
+let hour = now.getHours();
+
+console.log(now, hour);
+
+if (hour < 7) {
+    mainBody.classList.toggle('dark');
+} else {
+    if (darkMode) {
+        mainBody.classList.remove('dark');
+    }
+}
+
 // remove resize
 const delayGrow = 300;
 const delayFade = 2300;
