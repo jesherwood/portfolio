@@ -9,9 +9,25 @@ function toggleMode() {
         document.documentElement.style.setProperty('--color', '0, 0, 0');
         document.documentElement.style.setProperty('--background-color', '255, 255, 255');
     }
-    if (document.body.classList.contains('dark')) {
+    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#home') || !window.location.hash) {
         document.documentElement.style.setProperty('--color', '255, 255, 255');
         document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+    }
+    if ((new URL(document.URL).hash === '#work')) {
+        document.documentElement.style.setProperty('--color', '165, 36, 34');
+        document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+    }
+    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#work')) {
+        document.documentElement.style.setProperty('--color', '178, 103, 94');
+        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+    }
+    if ((new URL(document.URL).hash === '#contact')) {
+        document.documentElement.style.setProperty('--color', '0, 110, 144');
+        document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+    }
+    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#contact')) {
+        document.documentElement.style.setProperty('--color', '187, 214, 134');
+        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
     }
 }
 
