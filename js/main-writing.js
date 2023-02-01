@@ -2,6 +2,11 @@
 // dark mode switch
 const mainBody = document.getElementsByTagName('body')[0];
 let darkMode = document.body.classList.contains('dark');
+let toggleButton = document.getElementsByClassName('dark-mode-text')[0];
+
+
+toggleButton.style.setProperty('--color', '0, 0, 0');
+toggleButton.style.setProperty('--background-color', '255, 255, 255');
 
 function toggleMode() {
     mainBody.classList.toggle('dark');
@@ -12,22 +17,32 @@ function toggleMode() {
     if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#home') || !window.location.hash) {
         document.documentElement.style.setProperty('--color', '255, 255, 255');
         document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+        toggleButton.style.setProperty('--color', '255, 255, 255');
+        toggleButton.style.setProperty('--background-color', '0, 0, 0');
     }
     if ((new URL(document.URL).hash === '#work')) {
         document.documentElement.style.setProperty('--color', '165, 36, 34');
         document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+        toggleButton.style.setProperty('--color', '165, 36, 34');
+        toggleButton.style.setProperty('--background-color', '240, 162, 2');
     }
     if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#work')) {
         document.documentElement.style.setProperty('--color', '178, 103, 94');
         document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+        toggleButton.style.setProperty('--color', '178, 103, 94');
+        toggleButton.style.setProperty('--background-color', '22, 48, 43');
     }
     if ((new URL(document.URL).hash === '#contact')) {
         document.documentElement.style.setProperty('--color', '0, 110, 144');
         document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+        toggleButton.style.setProperty('--color', '0, 110, 144');
+        toggleButton.style.setProperty('--background-color', '169, 178, 172');
     }
     if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#contact')) {
         document.documentElement.style.setProperty('--color', '187, 214, 134');
         document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+        toggleButton.style.setProperty('--color', '187, 214, 134');
+        toggleButton.style.setProperty('--background-color', '40, 0, 4');
     }
 }
 
@@ -87,23 +102,35 @@ function updateFragId() {
                 if (new URL(document.URL).hash === '#work') {
                     document.documentElement.style.setProperty('--color', '165, 36, 34');
                     document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+                    toggleButton.style.setProperty('--color', '165, 36, 34');
+                    toggleButton.style.setProperty('--background-color', '240, 162, 2');
                     if (darkMode) {
                         document.documentElement.style.setProperty('--color', '178, 103, 94');
                         document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+                        toggleButton.style.setProperty('--color', '178, 103, 94');
+                        toggleButton.style.setProperty('--background-color', '22, 48, 43');
                     }
                 } else if (new URL(document.URL).hash === '#contact') {
                     document.documentElement.style.setProperty('--color', '0, 110, 144');
                     document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+                    toggleButton.style.setProperty('--color', '0, 110, 144');
+                    toggleButton.style.setProperty('--background-color', '169, 178, 172');
                     if (darkMode) {
                         document.documentElement.style.setProperty('--color', '187, 214, 134');
                         document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+                        toggleButton.style.setProperty('--color', '187, 214, 134');
+                        toggleButton.style.setProperty('--background-color', '40, 0, 4');
                     }
                 } else {
                     document.documentElement.style.setProperty('--color', '0, 0, 0');
                     document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+                    toggleButton.style.setProperty('--color', '0, 0, 0');
+                    toggleButton.style.setProperty('--background-color', '255, 255, 255');
                     if (darkMode) {
                         document.documentElement.style.setProperty('--color', '255, 255, 255');
                         document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+                        toggleButton.style.setProperty('--color', '255, 255, 255');
+                        toggleButton.style.setProperty('--background-color', '0, 0, 0');
                     }
                 }
             }

@@ -419,6 +419,13 @@ section#contact h1 {
     background-color: rgba(var(--fiery-rose), 1);
     color: rgba(var(--blue-sapphire), 1);
     transition: all 5s ease-out;
+    -moz-transition: all 5s ease-out;
+}
+
+.contact-button:focus:hover {
+  background-color: rgba(var(--fiery-rose), 1);
+  color: rgba(var(--blue-sapphire), 1);
+  transition: all 5s ease-out;
 }
 
 .contact-email {
