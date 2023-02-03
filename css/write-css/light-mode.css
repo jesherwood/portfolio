@@ -193,7 +193,9 @@ section h1 {
 
 .hero p {
     opacity: 0;
-    width: 80%;
+    width: 35%;
+    padding-left: 3rem;
+    margin-top: 0;
 }
 
 .fade-in p {
@@ -276,12 +278,12 @@ section#work {
     background: url('img/cooper-creek-image.png') no-repeat center/100%;
 }
 
-.work-object.one h3:hover, .descrip:hover {
+.work-object.one h3:hover, .work-object.one .descrip:hover {
     cursor: pointer;
 }
 
 .work-object.two:hover {
-    background: url('img/WWNN-image.png') no-repeat center/100%;
+    background: url('img/Oil-Rig.png') no-repeat center/100%;
 }
 
 .work-object.three:hover {
@@ -297,7 +299,7 @@ section#work {
 }
 
 .work-object.six:hover {
-    background: url('img/day-zero-image.png') no-repeat center/100%;
+    background: url('img/deer-skull.png') no-repeat center/100%;
 }
 
 .work-object.seven:hover {
@@ -384,6 +386,12 @@ p.epigraph {
     margin-right: auto;
     width: 50%;
     line-height: 1.3rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }
 
 /* contact */
