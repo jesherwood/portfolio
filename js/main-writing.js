@@ -232,7 +232,7 @@ function contact() {
 // date in footer
 let date = new Date();
 let year = date.getFullYear();
-document.getElementsByClassName('date')[0].innerHTML = year;
+document.getElementsByClassName('date-w')[0].innerHTML = year;
 
 // press and hold verification
 
