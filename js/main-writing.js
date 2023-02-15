@@ -80,10 +80,10 @@ const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
-  let scrollY = window.pageYOffset;
-  sections.forEach(current => {
-    const sectionHeight = current.offsetHeight;
-  });
+    let scrollY = window.pageYOffset;
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+    });
 }
 // change section hash & color on scroll
 
@@ -93,7 +93,10 @@ function updateFragId() {
     for (let i = 0; i < len; i++) {
         let id = sections[i].id;
         let rect = sections[i].getBoundingClientRect().y;
-        let pageData = {id:id, rect:rect};
+        let pageData = {
+            id: id,
+            rect: rect
+        };
         let darkMode = document.body.classList.contains('dark');
         if (pageData.rect > -100 && pageData.rect < 100) {
             if (pageData.id !== location.hash) {
@@ -202,7 +205,7 @@ for (let i = 0; i < workObjects.length; i++) {
         for (let j = 0; j < workObjects.length; j++) {
             workObjects[j].style.opacity = '1';
         }
-  });
+    });
 }
 
 // excerpt modal functions
@@ -215,8 +218,8 @@ function closeModal() {
     document.getElementsByClassName('lightbox')[0].style.display = "none";
 }
 
-function keyPress (e) {
-    if(e.key === "Escape") {
+function keyPress(e) {
+    if (e.key === "Escape") {
         closeModal();
     }
 }
@@ -228,11 +231,6 @@ function contact() {
         window.location.href = '#contact';
     }
 }
-
-// date in footer
-let date = new Date();
-let year = date.getFullYear();
-document.getElementsByClassName('date-w')[0].innerHTML = year;
 
 // press and hold verification
 
@@ -254,7 +252,9 @@ item.addEventListener("mousedown", pressingDown, false);
 item.addEventListener("mouseup", notPressingDown, false);
 item.addEventListener("mouseleave", notPressingDown, false);
 
-item.addEventListener("touchstart", pressingDown, {passive: true});
+item.addEventListener("touchstart", pressingDown, {
+    passive: true
+});
 item.addEventListener("touchend", notPressingDown, false);
 
 // Listening for our custom pressHold event
@@ -310,3 +310,8 @@ function doSomething(e) {
         setTimeout(removeEmail, 3000);
     }
 }
+
+// date in footer
+let date = new Date();
+let year = date.getFullYear();
+document.getElementsByClassName('date-w')[0].innerHTML = year;
