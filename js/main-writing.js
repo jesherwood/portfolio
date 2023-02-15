@@ -1,48 +1,48 @@
 // *** dark mode stuff
 // dark mode switch
-const mainBody = document.getElementsByTagName("body")[0];
-let darkMode = document.body.classList.contains("dark");
-let toggleButton = document.getElementsByClassName("dark-mode-text")[0];
+const mainBody = document.getElementsByTagName('body')[0];
+let darkMode = document.body.classList.contains('dark');
+let toggleButton = document.getElementsByClassName('dark-mode-text')[0];
 
 
-toggleButton.style.setProperty("--color", "0, 0, 0");
-toggleButton.style.setProperty("--background-color", "255, 255, 255");
+toggleButton.style.setProperty('--color', '0, 0, 0');
+toggleButton.style.setProperty('--background-color', '255, 255, 255');
 
 function toggleMode() {
-    mainBody.classList.toggle("dark");
-    if ((new URL(document.URL).hash === "#home") || !window.location.hash) {
-        document.documentElement.style.setProperty("--color", "0, 0, 0");
-        document.documentElement.style.setProperty("--background-color", "255, 255, 255");
+    mainBody.classList.toggle('dark');
+    if ((new URL(document.URL).hash === '#home') || !window.location.hash) {
+        document.documentElement.style.setProperty('--color', '0, 0, 0');
+        document.documentElement.style.setProperty('--background-color', '255, 255, 255');
     }
-    if (document.body.classList.contains("dark") && (new URL(document.URL).hash === "#home") || !window.location.hash) {
-        document.documentElement.style.setProperty("--color", "255, 255, 255");
-        document.documentElement.style.setProperty("--background-color", "0, 0, 0");
-        toggleButton.style.setProperty("--color", "255, 255, 255");
-        toggleButton.style.setProperty("--background-color", "0, 0, 0");
+    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#home') || !window.location.hash) {
+        document.documentElement.style.setProperty('--color', '255, 255, 255');
+        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+        toggleButton.style.setProperty('--color', '255, 255, 255');
+        toggleButton.style.setProperty('--background-color', '0, 0, 0');
     }
-    if (new URL(document.URL).hash === "#work") {
-        document.documentElement.style.setProperty("--color", "165, 36, 34");
-        document.documentElement.style.setProperty("--background-color", "240, 162, 2");
-        toggleButton.style.setProperty("--color", "165, 36, 34");
-        toggleButton.style.setProperty("--background-color", "240, 162, 2");
+    if ((new URL(document.URL).hash === '#work')) {
+        document.documentElement.style.setProperty('--color', '165, 36, 34');
+        document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+        toggleButton.style.setProperty('--color', '165, 36, 34');
+        toggleButton.style.setProperty('--background-color', '240, 162, 2');
     }
-    if (document.body.classList.contains("dark") && (new URL(document.URL).hash === "#work")) {
-        document.documentElement.style.setProperty("--color", "178, 103, 94");
-        document.documentElement.style.setProperty("--background-color", "22, 48, 43");
-        toggleButton.style.setProperty("--color", "178, 103, 94");
-        toggleButton.style.setProperty("--background-color", "22, 48, 43");
+    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#work')) {
+        document.documentElement.style.setProperty('--color', '178, 103, 94');
+        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+        toggleButton.style.setProperty('--color', '178, 103, 94');
+        toggleButton.style.setProperty('--background-color', '22, 48, 43');
     }
-    if ((new URL(document.URL).hash === "#contact")) {
-        document.documentElement.style.setProperty("--color", "0, 110, 144");
-        document.documentElement.style.setProperty("--background-color", "169, 178, 172");
-        toggleButton.style.setProperty("--color", "0, 110, 144");
-        toggleButton.style.setProperty("--background-color", "169, 178, 172");
+    if ((new URL(document.URL).hash === '#contact')) {
+        document.documentElement.style.setProperty('--color', '0, 110, 144');
+        document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+        toggleButton.style.setProperty('--color', '0, 110, 144');
+        toggleButton.style.setProperty('--background-color', '169, 178, 172');
     }
-    if (document.body.classList.contains("dark") && (new URL(document.URL).hash === "#contact")) {
-        document.documentElement.style.setProperty("--color", "187, 214, 134");
-        document.documentElement.style.setProperty("--background-color", "40, 0, 4");
-        toggleButton.style.setProperty("--color", "187, 214, 134");
-        toggleButton.style.setProperty("--background-color", "40, 0, 4");
+    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#contact')) {
+        document.documentElement.style.setProperty('--color', '187, 214, 134');
+        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+        toggleButton.style.setProperty('--color', '187, 214, 134');
+        toggleButton.style.setProperty('--background-color', '40, 0, 4');
     }
 }
 
@@ -51,28 +51,28 @@ let now = new Date;
 let hour = now.getHours();
 
 if (hour < 7 || hour > 20) {
-    mainBody.classList.toggle("dark");
+    mainBody.classList.toggle('dark');
 } else {
     if (darkMode) {
-        mainBody.classList.remove("dark");
+        mainBody.classList.remove('dark');
     }
 }
 
 // remove resize
-// const delayGrow = 300;
-// const delayFade = 2300;
+const delayGrow = 300;
+const delayFade = 2300;
 
-// window.addEventListener("load", (growContent) => {
-//     setTimeout(function() {
-//         document.getElementsByClassName("hero-object")[0].style.transform = "scale(50%)";
-//     }, delayGrow);
-// });
+window.addEventListener('load', (growContent) => {
+    setTimeout(function() {
+        document.getElementsByClassName('hero-object')[0].style.transform = 'scale(50%)';
+    }, delayGrow);
+});
 
-// window.addEventListener("load", (growContent) => {
-//     setTimeout(function() {
-//         document.getElementsByClassName("hero-container")[0].classList.add("fade-in");
-//     }, delayFade);
-// });
+window.addEventListener('load', (growContent) => {
+    setTimeout(function() {
+        document.getElementsByClassName('hero-container')[0].classList.add('fade-in');
+    }, delayFade);
+});
 
 // *** scrolling/navigation w/ color change stuff ***
 // navigation on click
@@ -94,113 +94,113 @@ function updateFragId() {
         let id = sections[i].id;
         let rect = sections[i].getBoundingClientRect().y;
         let pageData = {id:id, rect:rect};
-        let darkMode = document.body.classList.contains("dark");
+        let darkMode = document.body.classList.contains('dark');
         if (pageData.rect > -100 && pageData.rect < 100) {
             if (pageData.id !== location.hash) {
                 fragmentId = pageData.id;
                 window.location.hash = fragmentId;
-                if (new URL(document.URL).hash === "#work") {
-                    document.documentElement.style.setProperty("--color", "165, 36, 34");
-                    document.documentElement.style.setProperty("--background-color", "240, 162, 2");
-                    toggleButton.style.setProperty("--color", "165, 36, 34");
-                    toggleButton.style.setProperty("--background-color", "240, 162, 2");
+                if (new URL(document.URL).hash === '#work') {
+                    document.documentElement.style.setProperty('--color', '165, 36, 34');
+                    document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+                    toggleButton.style.setProperty('--color', '165, 36, 34');
+                    toggleButton.style.setProperty('--background-color', '240, 162, 2');
                     if (darkMode) {
-                        document.documentElement.style.setProperty("--color", "178, 103, 94");
-                        document.documentElement.style.setProperty("--background-color", "22, 48, 43");
-                        toggleButton.style.setProperty("--color", "178, 103, 94");
-                        toggleButton.style.setProperty("--background-color", "22, 48, 43");
+                        document.documentElement.style.setProperty('--color', '178, 103, 94');
+                        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
+                        toggleButton.style.setProperty('--color', '178, 103, 94');
+                        toggleButton.style.setProperty('--background-color', '22, 48, 43');
                     }
-                } else if (new URL(document.URL).hash === "#contact") {
-                    document.documentElement.style.setProperty("--color", "0, 110, 144");
-                    document.documentElement.style.setProperty("--background-color", "169, 178, 172");
-                    toggleButton.style.setProperty("--color", "0, 110, 144");
-                    toggleButton.style.setProperty("--background-color", "169, 178, 172");
+                } else if (new URL(document.URL).hash === '#contact') {
+                    document.documentElement.style.setProperty('--color', '0, 110, 144');
+                    document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+                    toggleButton.style.setProperty('--color', '0, 110, 144');
+                    toggleButton.style.setProperty('--background-color', '169, 178, 172');
                     if (darkMode) {
-                        document.documentElement.style.setProperty("--color", "187, 214, 134");
-                        document.documentElement.style.setProperty("--background-color", "40, 0, 4");
-                        toggleButton.style.setProperty("--color", "187, 214, 134");
-                        toggleButton.style.setProperty("--background-color", "40, 0, 4");
+                        document.documentElement.style.setProperty('--color', '187, 214, 134');
+                        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
+                        toggleButton.style.setProperty('--color', '187, 214, 134');
+                        toggleButton.style.setProperty('--background-color', '40, 0, 4');
                     }
                 } else {
-                    document.documentElement.style.setProperty("--color", "0, 0, 0");
-                    document.documentElement.style.setProperty("--background-color", "255, 255, 255");
-                    toggleButton.style.setProperty("--color", "0, 0, 0");
-                    toggleButton.style.setProperty("--background-color", "255, 255, 255");
+                    document.documentElement.style.setProperty('--color', '0, 0, 0');
+                    document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+                    toggleButton.style.setProperty('--color', '0, 0, 0');
+                    toggleButton.style.setProperty('--background-color', '255, 255, 255');
                     if (darkMode) {
-                        document.documentElement.style.setProperty("--color", "255, 255, 255");
-                        document.documentElement.style.setProperty("--background-color", "0, 0, 0");
-                        toggleButton.style.setProperty("--color", "255, 255, 255");
-                        toggleButton.style.setProperty("--background-color", "0, 0, 0");
+                        document.documentElement.style.setProperty('--color', '255, 255, 255');
+                        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
+                        toggleButton.style.setProperty('--color', '255, 255, 255');
+                        toggleButton.style.setProperty('--background-color', '0, 0, 0');
                     }
                 }
             }
         }
     }
 }
-window.addEventListener("scroll", updateFragId);
+window.addEventListener('scroll', updateFragId);
 
 // turn off scroll function on load to prevent direct links to sections from not working
 
 function pauseScroll() {
-    window.removeEventListener("scroll", updateFragId);
+    window.removeEventListener('scroll', updateFragId);
     setTimeout(() => {
-        window.addEventListener("scroll", updateFragId);
+        window.addEventListener('scroll', updateFragId);
     }, 500);
 }
-window.addEventListener("load", pauseScroll);
+window.addEventListener('load', pauseScroll);
 
 // turn off above scroll function when a nav item is clicked and change color
 
-const navItem = document.getElementsByClassName("nav-item");
+const navItem = document.getElementsByClassName('nav-item');
 
 function navClick() {
-    window.removeEventListener("scroll", updateFragId);
+    window.removeEventListener('scroll', updateFragId);
 
-    navItem[0].addEventListener("click", (colorChange) => {
-        document.documentElement.style.setProperty("--color", "0, 0, 0");
-        document.documentElement.style.setProperty("--background-color", "255, 255, 255");
-        if (document.body.classList.contains("dark")) {
-            document.documentElement.style.setProperty("--color", "255, 255, 255");
-            document.documentElement.style.setProperty("--background-color", "0, 0, 0");
+    navItem[0].addEventListener('click', (colorChange) => {
+        document.documentElement.style.setProperty('--color', '0, 0, 0');
+        document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+        if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--color', '255, 255, 255');
+            document.documentElement.style.setProperty('--background-color', '0, 0, 0');
         }
     });
-    navItem[1].addEventListener("click", (colorChange) => {
-        document.documentElement.style.setProperty("--color", "165, 36, 34");
-        document.documentElement.style.setProperty("--background-color", "240, 162, 2");
-        if (document.body.classList.contains("dark")) {
-            document.documentElement.style.setProperty("--color", "178, 103, 94");
-            document.documentElement.style.setProperty("--background-color", "22, 48, 43");
+    navItem[1].addEventListener('click', (colorChange) => {
+        document.documentElement.style.setProperty('--color', '165, 36, 34');
+        document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+        if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--color', '178, 103, 94');
+            document.documentElement.style.setProperty('--background-color', '22, 48, 43');
         }
     });
-    navItem[2].addEventListener("click", (colorChange) => {
-        document.documentElement.style.setProperty("--color", "0, 110, 144");
-        document.documentElement.style.setProperty("--background-color", "169, 178, 172");
-        if (document.body.classList.contains("dark")) {
-            document.documentElement.style.setProperty("--color", "187, 214, 134");
-            document.documentElement.style.setProperty("--background-color", "40, 0, 4");
+    navItem[2].addEventListener('click', (colorChange) => {
+        document.documentElement.style.setProperty('--color', '0, 110, 144');
+        document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+        if (document.body.classList.contains('dark')) {
+            document.documentElement.style.setProperty('--color', '187, 214, 134');
+            document.documentElement.style.setProperty('--background-color', '40, 0, 4');
         }
     });
 
     setTimeout(() => {
-        window.addEventListener("scroll", updateFragId);
+        window.addEventListener('scroll', updateFragId);
     }, 500);
 }
 
 // fade non-hovered items
-const workObjects = document.getElementsByClassName("work-object");
+const workObjects = document.getElementsByClassName('work-object');
 
 for (let i = 0; i < workObjects.length; i++) {
-    workObjects[i].addEventListener("mouseenter", (e) => {
+    workObjects[i].addEventListener('mouseenter', (e) => {
         let active = workObjects[i];
         console.log(workObjects);
         for (let j = 0; j < workObjects.length; j++) {
-            workObjects[j].style.opacity = "0.3";
-            active.style.opacity = "1";
+            workObjects[j].style.opacity = '0.3';
+            active.style.opacity = '1';
         }
     });
-    workObjects[i].addEventListener("mouseleave", (e) => {
+    workObjects[i].addEventListener('mouseleave', (e) => {
         for (let j = 0; j < workObjects.length; j++) {
-            workObjects[j].style.opacity = "1";
+            workObjects[j].style.opacity = '1';
         }
   });
 }
@@ -208,11 +208,11 @@ for (let i = 0; i < workObjects.length; i++) {
 // excerpt modal functions
 
 function openModal() {
-    document.getElementsByClassName("lightbox")[0].style.display = "block";
+    document.getElementsByClassName('lightbox')[0].style.display = "block";
 }
 
 function closeModal() {
-    document.getElementsByClassName("lightbox")[0].style.display = "none";
+    document.getElementsByClassName('lightbox')[0].style.display = "none";
 }
 
 function keyPress (e) {
@@ -223,21 +223,21 @@ function keyPress (e) {
 
 function contact() {
     pauseScroll()
-    document.getElementsByClassName("lightbox")[0].style.display = "none";
-    if (new URL(document.URL).hash !== "#contact") {
-        window.location.href = "#contact";
+    document.getElementsByClassName('lightbox')[0].style.display = "none";
+    if (new URL(document.URL).hash !== '#contact') {
+        window.location.href = '#contact';
     }
 }
 
 // date in footer
 let date = new Date();
 let year = date.getFullYear();
-document.getElementsByClassName("date-w")[0].innerHTML = year;
+document.getElementsByClassName('date-w')[0].innerHTML = year;
 
 // press and hold verification
 
 // The item (or items) to press and hold on
-let item = document.getElementsByClassName("contact-button")[0];
+let item = document.getElementsByClassName('contact-button')[0];
 
 let timerID;
 let counter = 0;
@@ -293,19 +293,19 @@ function timer() {
 }
 
 //remove button and put in link to email
-let email = document.getElementsByClassName("contact-email")[0];
+let email = document.getElementsByClassName('contact-email')[0];
 
 function doSomething(e) {
     console.log("pressHold event fired!");
-    emailText = "amVzc2UuZS5zaGVyd29vZEBnbWFpbC5jb20=";
-    email.style.display = "block";
-    email.innerHTML += "<a href="mailto:" + atob(emailText) + "" target="_blank"> click here to email me</a>";
-    item.style.display = "none";
-    if (window.getComputedStyle(email, null).display === "block") {
+    emailText = 'amVzc2UuZS5zaGVyd29vZEBnbWFpbC5jb20=';
+    email.style.display = 'block';
+    email.innerHTML += '<a href="mailto:' + atob(emailText) + '" target="_blank"> click here to email me</a>';
+    item.style.display = 'none';
+    if (window.getComputedStyle(email, null).display === 'block') {
         function removeEmail(el) {
-            email.innerHTML = "";
-            email.style.display = "none";
-            item.style.display = "block";
+            email.innerHTML = '';
+            email.style.display = 'none';
+            item.style.display = 'block';
         }
         setTimeout(removeEmail, 3000);
     }
