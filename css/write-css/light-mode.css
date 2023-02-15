@@ -133,9 +133,9 @@ section h1 {
 /* hero */
 
 .hero-container {
-    height: 18rem;
+    /* height: 18rem;
     width: 10rem;
-    margin: auto;
+    margin: auto; */
 }
 
 .home-about {
@@ -149,16 +149,17 @@ section h1 {
 }
 
 .hero-object {
-    margin: auto;
-    width: 50rem;
-    height: 50rem;
-    border-radius: 100%;
+    /* margin: auto;
+    width: 50rem; */
+    height: 20rem;
+    top: 40%;
+    /* border-radius: 100%; */
     border: 1px rgba(var(--color), 1) solid;
     transition: transform 2s ease;
 }
 
-.fade-in .hero-object {
-    background: url('img/my-photo-BW-2.png') no-repeat center/100%;
+.hero-object {
+    /* background: url('img/my-photo-BW-2.png') no-repeat center/100%; */
 }
 
 .hero {
