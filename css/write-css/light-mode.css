@@ -427,6 +427,26 @@ section#contact h1 {
     user-select: none;
 }
 
+/* no cookies banner */
+
+aside {
+  position:fixed;
+  top: 90%;
+  right: 1%;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  border: 1px dashed rgba(var(--color), 1);
+  background-color: rgba(var(--background-color), 1);
+  z-index: 10;
+  transition: opacity 10s ease-in-out;
+  opacity: 0;
+}
+
+aside p {
+  font-size: 80%;
+  line-height: 0;
+}
+
 /* footer */
 
 footer {
