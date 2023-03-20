@@ -158,7 +158,8 @@ section h1 {
 }
 
 .fade-in .hero-object {
-    /* background: url('img/my-photo-BW-2.png') no-repeat center/100%; */
+    background: url('img/jesse_sherwood_headshot.jpg') no-repeat center/100%;
+    opacity: 0.8;
 }
 
 .hero {
@@ -176,7 +177,7 @@ section h1 {
 
 .hero p {
     opacity: 0;
-    width: 35%;
+    width: 40%;
     margin-top: 0;
 }
 
