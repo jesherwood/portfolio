@@ -165,22 +165,25 @@ section h1 {
 
 .hero {
     position: absolute;
-    top: 38vh;
+    top: 50vh;
     left: 30%;
     padding-left: 1rem;
     color: rgba(var(--color), 1);
 }
 
 .hero h1 {
+    display: inline-block;
     padding-top: 0;
+    padding-right: 1rem;
     margin-top: 0;
+    background-color: rgba(var(--background-color), 0.7);
 }
 
 .hero p {
     opacity: 0;
     width: 40%;
     margin-top: 0;
-    background-color: rgba(var(--background-color), 0.5);
+    background-color: rgba(var(--background-color), 0.7);
 }
 
 .fade-in p {
