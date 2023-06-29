@@ -299,7 +299,7 @@ function doSomething(e) {
     console.log("pressHold event fired!");
     emailText = 'amVzc2UuZS5zaGVyd29vZEBnbWFpbC5jb20=';
     email.style.display = 'block';
-    email.innerHTML += '<a href="mailto:' + atob(emailText) + '" target="_blank"> click here to email me</a>';
+    email.innerHTML += '<span style="font-weight:bold;font-size:2rem;"><a href="mailto:' + atob(emailText) + '" target="_blank" style="color:rgba(var(--fiery-rose),1);"> click here to email me</a></span>';
     item.style.display = 'none';
     if (window.getComputedStyle(email, null).display === 'block') {
         function removeEmail(el) {
