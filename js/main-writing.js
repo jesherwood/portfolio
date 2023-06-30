@@ -1,63 +1,3 @@
-// *** dark mode stuff
-// dark mode switch
-const mainBody = document.getElementsByTagName('body')[0];
-let darkMode = document.body.classList.contains('dark');
-let toggleButton = document.getElementsByClassName('dark-mode-text')[0];
-
-
-toggleButton.style.setProperty('--color', '0, 0, 0');
-toggleButton.style.setProperty('--background-color', '255, 255, 255');
-
-function toggleMode() {
-    mainBody.classList.toggle('dark');
-    if ((new URL(document.URL).hash === '#home') || !window.location.hash) {
-        document.documentElement.style.setProperty('--color', '0, 0, 0');
-        document.documentElement.style.setProperty('--background-color', '255, 255, 255');
-    }
-    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#home') || !window.location.hash) {
-        document.documentElement.style.setProperty('--color', '255, 255, 255');
-        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
-        toggleButton.style.setProperty('--color', '255, 255, 255');
-        toggleButton.style.setProperty('--background-color', '0, 0, 0');
-    }
-    if ((new URL(document.URL).hash === '#work')) {
-        document.documentElement.style.setProperty('--color', '165, 36, 34');
-        document.documentElement.style.setProperty('--background-color', '240, 162, 2');
-        toggleButton.style.setProperty('--color', '165, 36, 34');
-        toggleButton.style.setProperty('--background-color', '240, 162, 2');
-    }
-    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#work')) {
-        document.documentElement.style.setProperty('--color', '178, 103, 94');
-        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
-        toggleButton.style.setProperty('--color', '178, 103, 94');
-        toggleButton.style.setProperty('--background-color', '22, 48, 43');
-    }
-    if ((new URL(document.URL).hash === '#contact')) {
-        document.documentElement.style.setProperty('--color', '0, 110, 144');
-        document.documentElement.style.setProperty('--background-color', '169, 178, 172');
-        toggleButton.style.setProperty('--color', '0, 110, 144');
-        toggleButton.style.setProperty('--background-color', '169, 178, 172');
-    }
-    if (document.body.classList.contains('dark') && (new URL(document.URL).hash === '#contact')) {
-        document.documentElement.style.setProperty('--color', '187, 214, 134');
-        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
-        toggleButton.style.setProperty('--color', '187, 214, 134');
-        toggleButton.style.setProperty('--background-color', '40, 0, 4');
-    }
-}
-
-//dark mode switch after dark
-let now = new Date;
-let hour = now.getHours();
-
-if (hour < 7 || hour > 20) {
-    mainBody.classList.toggle('dark');
-} else {
-    if (darkMode) {
-        mainBody.classList.remove('dark');
-    }
-}
-
 // remove resize
 const delayGrow = 300;
 const delayFade = 2300;
@@ -107,34 +47,16 @@ function updateFragId() {
                     document.documentElement.style.setProperty('--background-color', '240, 162, 2');
                     toggleButton.style.setProperty('--color', '165, 36, 34');
                     toggleButton.style.setProperty('--background-color', '240, 162, 2');
-                    if (darkMode) {
-                        document.documentElement.style.setProperty('--color', '178, 103, 94');
-                        document.documentElement.style.setProperty('--background-color', '22, 48, 43');
-                        toggleButton.style.setProperty('--color', '178, 103, 94');
-                        toggleButton.style.setProperty('--background-color', '22, 48, 43');
-                    }
                 } else if (new URL(document.URL).hash === '#contact') {
                     document.documentElement.style.setProperty('--color', '0, 110, 144');
                     document.documentElement.style.setProperty('--background-color', '169, 178, 172');
                     toggleButton.style.setProperty('--color', '0, 110, 144');
                     toggleButton.style.setProperty('--background-color', '169, 178, 172');
-                    if (darkMode) {
-                        document.documentElement.style.setProperty('--color', '187, 214, 134');
-                        document.documentElement.style.setProperty('--background-color', '40, 0, 4');
-                        toggleButton.style.setProperty('--color', '187, 214, 134');
-                        toggleButton.style.setProperty('--background-color', '40, 0, 4');
-                    }
                 } else {
                     document.documentElement.style.setProperty('--color', '0, 0, 0');
                     document.documentElement.style.setProperty('--background-color', '255, 255, 255');
                     toggleButton.style.setProperty('--color', '0, 0, 0');
                     toggleButton.style.setProperty('--background-color', '255, 255, 255');
-                    if (darkMode) {
-                        document.documentElement.style.setProperty('--color', '255, 255, 255');
-                        document.documentElement.style.setProperty('--background-color', '0, 0, 0');
-                        toggleButton.style.setProperty('--color', '255, 255, 255');
-                        toggleButton.style.setProperty('--background-color', '0, 0, 0');
-                    }
                 }
             }
         }
@@ -162,26 +84,14 @@ function navClick() {
     navItem[0].addEventListener('click', (colorChange) => {
         document.documentElement.style.setProperty('--color', '0, 0, 0');
         document.documentElement.style.setProperty('--background-color', '255, 255, 255');
-        if (document.body.classList.contains('dark')) {
-            document.documentElement.style.setProperty('--color', '255, 255, 255');
-            document.documentElement.style.setProperty('--background-color', '0, 0, 0');
-        }
     });
     navItem[1].addEventListener('click', (colorChange) => {
         document.documentElement.style.setProperty('--color', '165, 36, 34');
         document.documentElement.style.setProperty('--background-color', '240, 162, 2');
-        if (document.body.classList.contains('dark')) {
-            document.documentElement.style.setProperty('--color', '178, 103, 94');
-            document.documentElement.style.setProperty('--background-color', '22, 48, 43');
-        }
     });
     navItem[2].addEventListener('click', (colorChange) => {
         document.documentElement.style.setProperty('--color', '0, 110, 144');
         document.documentElement.style.setProperty('--background-color', '169, 178, 172');
-        if (document.body.classList.contains('dark')) {
-            document.documentElement.style.setProperty('--color', '187, 214, 134');
-            document.documentElement.style.setProperty('--background-color', '40, 0, 4');
-        }
     });
 
     setTimeout(() => {
@@ -299,7 +209,7 @@ function doSomething(e) {
     console.log("pressHold event fired!");
     emailText = 'amVzc2UuZS5zaGVyd29vZEBnbWFpbC5jb20=';
     email.style.display = 'block';
-    email.innerHTML += '<span style="font-weight:bold;font-size:2rem;"><a href="mailto:' + atob(emailText) + '" target="_blank" style="color:rgba(var(--fiery-rose),1);"> click here to email me</a></span>';
+    email.innerHTML += '<span style="font-weight:bold;font-size:2rem;font-family:  \'Bungee\', cursive;"><a href="mailto:' + atob(emailText) + '" target="_blank"> click here to email me</a></span>';
     item.style.display = 'none';
     if (window.getComputedStyle(email, null).display === 'block') {
         function removeEmail(el) {
