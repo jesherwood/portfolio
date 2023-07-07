@@ -14,6 +14,18 @@ window.addEventListener('load', (growContent) => {
     }, delayFade);
 });
 
+// *** color load correctly on url ***
+if (window.location.href.indexOf('home') > -1) {
+    document.documentElement.style.setProperty('--color', '0, 0, 0');
+    document.documentElement.style.setProperty('--background-color', '255, 255, 255');
+} else if (window.location.href.indexOf('work') > -1) {
+    document.documentElement.style.setProperty('--color', '165, 36, 34');
+    document.documentElement.style.setProperty('--background-color', '240, 162, 2');
+} else if (window.location.href.indexOf('contact') > -1) {
+    document.documentElement.style.setProperty('--color', '0, 110, 144');
+    document.documentElement.style.setProperty('--background-color', '169, 178, 172');
+}
+
 // *** scrolling/navigation w/ color change stuff ***
 // navigation on click
 const sections = document.querySelectorAll("section[id]");
@@ -148,7 +160,7 @@ let pressHoldEvent = new CustomEvent("pressHold");
 // Increase or decreae value to adjust how long
 // one should keep pressing down before the pressHold
 // event fires
-let pressHoldDuration = 200;
+let pressHoldDuration = 70;
 
 // Listening for the mouse and touch events
 item.addEventListener("mousedown", pressingDown, false);
@@ -202,7 +214,7 @@ function doSomething(e) {
     console.log("pressHold event fired!");
     emailText = 'amVzc2UuZS5zaGVyd29vZEBnbWFpbC5jb20=';
     email.style.display = 'block';
-    email.innerHTML += '<span style="font-weight:bold;font-size:2rem;font-family:  \'Bungee\', cursive;"><a href="mailto:' + atob(emailText) + '" target="_blank"> click here to email me</a></span>';
+    email.innerHTML += '<div style="font-weight:bold;font-size:2rem;font-family: \'Bungee\', cursive;width: 65%;margin-left: auto;margin-right: auto;"><a href="mailto:' + atob(emailText) + '" target="_blank"> click here to email me</a></div>';
     item.style.display = 'none';
     if (window.getComputedStyle(email, null).display === 'block') {
         function removeEmail(el) {
