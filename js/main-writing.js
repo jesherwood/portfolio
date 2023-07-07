@@ -37,7 +37,6 @@ function updateFragId() {
             id: id,
             rect: rect
         };
-        let darkMode = document.body.classList.contains('dark');
         if (pageData.rect > -100 && pageData.rect < 100) {
             if (pageData.id !== location.hash) {
                 fragmentId = pageData.id;
@@ -45,18 +44,12 @@ function updateFragId() {
                 if (new URL(document.URL).hash === '#work') {
                     document.documentElement.style.setProperty('--color', '165, 36, 34');
                     document.documentElement.style.setProperty('--background-color', '240, 162, 2');
-                    toggleButton.style.setProperty('--color', '165, 36, 34');
-                    toggleButton.style.setProperty('--background-color', '240, 162, 2');
                 } else if (new URL(document.URL).hash === '#contact') {
                     document.documentElement.style.setProperty('--color', '0, 110, 144');
                     document.documentElement.style.setProperty('--background-color', '169, 178, 172');
-                    toggleButton.style.setProperty('--color', '0, 110, 144');
-                    toggleButton.style.setProperty('--background-color', '169, 178, 172');
                 } else {
                     document.documentElement.style.setProperty('--color', '0, 0, 0');
                     document.documentElement.style.setProperty('--background-color', '255, 255, 255');
-                    toggleButton.style.setProperty('--color', '0, 0, 0');
-                    toggleButton.style.setProperty('--background-color', '255, 255, 255');
                 }
             }
         }
