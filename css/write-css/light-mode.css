@@ -611,6 +611,9 @@ footer a:visited {
         height: 50vw;
         margin-bottom: 10vh;
     }
+    .work-object:hover {
+      transform: scale(1.1);
+    }
     .work-object h2 {
         width: 30vh;
     }
