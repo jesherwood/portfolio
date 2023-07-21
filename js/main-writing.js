@@ -32,7 +32,7 @@ const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
-    let scrollY = window.pageYOffset;
+    let scrollY = window.scrollY;
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight;
     });

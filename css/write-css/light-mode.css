@@ -1,7 +1,6 @@
 /* General styles */
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
@@ -14,21 +13,13 @@ html {
 :root {
     --black: 0, 0, 0;
     --white: 255, 255, 255;
-    --auburn: 165, 36, 34;
-    --blue-sapphire: 0, 110, 144;
-    --aqua: 61, 250, 255;
-    --bitter-lemon: 194, 232, 18;
+    --dim-gray: 121, 114, 112;
     --marigold: 240, 162, 2;
-    --platinum: 169, 178, 172;
+    --auburn: 165, 36, 34;
     --oxford-blue: 10, 18, 42;
+    --blue-sapphire: 0, 110, 144;
+    --platinum: 169, 178, 172;
     --fiery-rose: 252, 100, 113;
-    --copper-penny: 178, 103, 94;
-    --phthalo-green: 22, 48, 43;
-    --dark-sienna: 40, 0, 4;
-    --yellow-green-crayola: 187, 214, 134;
-    --sinopia: 199, 62, 29;
-    --verdigris: 76, 181, 174;
-    --munsell-blue: 84, 151, 167;
     --color: 0, 0, 0;
     --background-color: ;
 }
@@ -38,7 +29,6 @@ html {
 }
 
 body {
-    height: 100%;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
@@ -55,13 +45,13 @@ body a {
 }
 
 h1 {
-    font-family: 'Monoton', cursive;
+    font-family: 'Monoton', san-serif;
     font-size: 4.5rem;
     font-weight: 400;
 }
 
 h3 {
-    font-family:  'Bungee Shade', cursive;
+    font-family:  'Bungee Shade', san-serif;
     font-size: 1.5rem;
 }
 
@@ -106,7 +96,7 @@ nav a:nth-child(3):hover {
 
 nav ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 6vw;
     list-style-type: none;
     margin-top: 0;
@@ -116,7 +106,7 @@ nav ul {
 }
 
 nav ul li {
-    font-family:  'Bungee', cursive;
+    font-family: 'Bungee', san-serif;
     display: inline-block;
     padding: 1rem;
 }
@@ -129,20 +119,6 @@ header p {
 header p:hover {
     transform: scale(1.4);
     cursor: pointer;
-}
-
-.dark-mode-text {
-    font-size: 1rem;
-    text-align: center;
-    color: rgba(var(--background-color), 1);
-    background-color: rgba(var(--color), 1);
-}
-
-.light-mode-text {
-    font-size: 1rem;
-    display: none;
-    color: rgba(var(--color), 1);
-    background-color: rgba(var(--background-color), 1);
 }
 
 /* all sections */
@@ -161,8 +137,6 @@ section h1 {
 /* hero */
 
 .hero-container {
-    height: 18rem;
-    width: 10rem;
     margin: auto;
 }
 
@@ -170,16 +144,10 @@ section h1 {
     background-color: rgba(var(--background-color), 1);
 }
 
-.home-about h2 {
-    position: absolute;
-    font-size: 1000%;
-    opacity: 0.2;
-}
-
 .hero-object {
-    margin: auto;
     width: 50rem;
     height: 50rem;
+    margin: 0 auto;
     border-radius: 100%;
     border: 1px rgba(var(--color), 1) solid;
     transition: transform 2s ease;
@@ -188,30 +156,31 @@ section h1 {
 .fade-in .hero-object {
     background: url('img/jesse_sherwood_headshot.jpg') no-repeat center/100%;
     border: none;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .hero {
     position: absolute;
     top: 50vh;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
+    left: 0;
+    right: 0;
     color: rgba(var(--color), 1);
+    background-color: rgba(var(--background-color), 0.6);
 }
 
 .hero h1 {
-    display: inline-block;
     padding-top: 0;
-    padding-right: 1rem;
-    margin-top: 0;
+    margin-top: 0.1rem;
+    text-align: center;
+    line-height: 3.5rem;
 }
 
 .hero p {
+    max-width: 55vw;
     opacity: 0;
-    width: 70%;
-    margin-top: 0;
+    margin: 0.5rem auto 0;
 }
 
 .fade-in p {
@@ -427,7 +396,6 @@ p.epigraph {
 
 /* contact */
 section#contact {
-    height: 100vh;
     background-color: rgba(var(--platinum), 1);
 }
 
@@ -537,15 +505,6 @@ footer a:visited {
     section h1 {
         padding-top: 6rem;
     }
-    .hero-object {
-        margin-left: -45vw;
-    }
-    .hero {
-        left: 5%;
-    }
-    .hero p {
-        width: 90%;
-    }
 
     .work-object h2 {
         width: inherit;
@@ -587,22 +546,15 @@ footer a:visited {
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 3.5rem;
-        line-height: 75%;
     }
     p {
         font-size: 1rem;
-    }
-    section {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-    .hero {
-        left: 2%
     }
     .hero-object {
         width: 37rem;
         height: 37rem;
     }
+
     .work-container {
         justify-content: center;
     }
